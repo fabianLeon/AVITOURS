@@ -9,14 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Viajes Aveturs</title>
-
+    <title>AVITOURS</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -24,12 +21,10 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+   
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
 
 </head>
 
@@ -46,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Viajes Aveturs</a>
+                <a class="navbar-brand page-scroll" href="#page-top">AVITOURS</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,10 +66,10 @@
                     <li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Usuario">
-                              <input type="text" class="form-control" placeholder="Contrase&ntilde;a">
+                              <input style="width: 120px" type="text" class="form-control" placeholder="Usuario">
+                              <input style="width: 120px" type="password" class="form-control" placeholder="Contrase&ntilde;a">
                             </div>
-                            <a style="width:100px; heigth: 10px;" type="submit" class="page-scroll btn btn-xl" onclick="submit()">Entrar</a>
+                             <button type="submit" class="btn btn-warning">Ingresar</button>
                         </form>
                     </li>
 
@@ -90,9 +85,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-lead-in">Bienvenido a Avitours!</div>
+                <div class="intro-heading">Desea Reservar ?</div>
+                <a href="#services" class="page-scroll btn btn-xl">Reservar</a>
             </div>
         </div>
     </header>

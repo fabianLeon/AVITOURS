@@ -4,6 +4,13 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.btn-warning {
+    color: #fff;
+    background-color: #fed136;
+    border-color: #fed136;
+    border-radius: 3px;
+}
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -124,7 +131,7 @@ fieldset[disabled] .btn-primary.active {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
     color: #fff;
     background-color: #fed136;
 }
@@ -178,6 +185,8 @@ fieldset[disabled] .btn-xl.active {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     color: #fed136;
 }
+
+
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
