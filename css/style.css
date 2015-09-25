@@ -1,0 +1,46 @@
+.canvas{
+	text-align: center;
+}
+canvas {
+	
+	border-radius: 0%;
+	margin: 5%;
+	border:1px solid;
+	border-color: #000;
+	background-image: url(../img/avion.png);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+}
+body{
+	background-image: url(../img/fondo.jpg);
+	font-family: Helvetica, Arial, Sans-Serif;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+}
+h1,h2,h3,h4,h5{
+	color: white;
+	text-align: center;
+}
+.botones{
+	text-align: center;
+
+}
+select>option{
+	text-align: center;
+	padding-bottom: 5px;
+}
+.form-control{
+	padding: 0;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+.thumbnile, .caption{
+	background-color: rgba(63, 63, 63,0.0); 
+}
+
+.thumbnile:hover, .caption:hover{
+	border-color: #000;
+	background-color: rgba(63, 63, 63,1.0); 
+}
