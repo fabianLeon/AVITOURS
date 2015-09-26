@@ -28,7 +28,7 @@
     <body id="page-top" class="index">
 
         <!-- Navigation -->
-        <?php include('templates/headerIndex.php'); ?>
+        <?php include('./templates/headerIndex.php'); ?>
 
         <!-- Header -->
         <header>
