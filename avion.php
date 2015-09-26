@@ -21,6 +21,19 @@
 
         <link rel="stylesheet"href="css/style.css"/>
     </head>
+    <body>
+        <!-- Navigation -->
+        <?php
+        include './templates/importCss.php';
+        include('templates/header.php');
+        ?>
+        <div class="canvas">
+            <canvas id="canvas" width="600" height="600">
+                Tu navegador no soporta canvas.
+            </canvas>
+        </div>
+
+    </body>
     <script>
         var avion =
 <?php
@@ -46,7 +59,6 @@ $avion = [
     [0, 0, 2, 2, 1, 0],
     [0, 1, 2, 2, 0, 1],
     [0, 0, 2, 2, 0, 0]
-    
 ];
 $columnas = count($avion);
 $filas = count($avion[0]);
@@ -79,7 +91,7 @@ echo ";";
 
         var inf_izq = [260, 415];
         var inf_der = [339, 415];
-        
+
         var ancho = sup_der[0] - sup_izq[0];
         var alto = inf_der[1] - sup_izq[1];
         var tamX = ancho / avion[0].length;
@@ -148,20 +160,6 @@ echo ";";
         }
 
     </script>
-
-
-
-       <body>
-        <!-- Navigation -->
-        <?php include('templates/header.php'); ?>
-
-
-        <div class="canvas">
-            <canvas id="canvas" width="600" height="600">
-                Tu navegador no soporta canvas.
-            </canvas>
-        </div>
-
-    </body>
+    <?php include './templates/importJS.php'; ?>
 
 </html>
