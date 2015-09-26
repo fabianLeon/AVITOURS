@@ -19,12 +19,6 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#reserva">Reservas</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#team">Equipo</a>
-                </li>
-                <li>
                     <a class="page-scroll" href="#registro">Registro</a>
                 </li>
                 <li>
