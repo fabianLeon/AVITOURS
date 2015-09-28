@@ -49,6 +49,24 @@ Class dao {
         return $result;
     }
 
+    
+    function transformarResultado($result){
+        $res = array();
+        while($row =  pg_fetch_row($result)){
+            $res[count($res)] = $row;
+        }
+        return $res;
+    }
+    
+    function getTitulos($result){
+        $num = pg_num_fields($result);
+        $titulos = array();
+        for($i = 0;$i<$num;$i++){
+            $titulos[$i] = pg_field_name($result, $i);
+        }
+        return $titulos;
+    }
+    
     /**
      * almacena en la base datos de acuerdo a los parametros
      *

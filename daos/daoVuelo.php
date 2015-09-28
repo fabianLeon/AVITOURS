@@ -13,7 +13,7 @@
  */
 Class daoVuelo{
 
-	var $database;
+    var $database;
 
     /**
      * constructor de la clase
@@ -22,14 +22,16 @@ Class daoVuelo{
         $this->database = $db;
     }
 
-	function getVuelos($filtro){
-		$sql = "SELECT * FROM avitour.vuelo v WHERE $filtro";
-		$res = $this->database->ejecutarConsulta($sql);
-		$arr = array();
-		while ($row = pg_fetch_row($res)) {
-			$arr[count($arr)] = $row;
-		}
-		return $arr;
-	}
+    function getVuelos($filtro){
+            $sql = "SELECT v.k_vuelo AS Id, c.n_nombre AS Origen, c2.n_nombre AS Destino, "
+                    . "v.d_fecha_salida AS Salida, v.d_fecha_llegada AS Llegada, "
+                    . "age(v.d_fecha_llegada,v.d_fecha_salida) AS Duracion  "
+                    . "FROM avitour.vuelo v, avitour.ciudad c, avitour.ciudad c2 "
+                    . "WHERE v.k_ciudad_origen = c.k_ciudad "
+                    . "AND v.k_ciudad_destino = c2.k_ciudad AND $filtro";
+            $res = $this->database->ejecutarConsulta($sql);
+            $arr = $this->database->transfirmarResultado($res);
+            return $arr;
+    }
 }
 ?>

@@ -7,29 +7,24 @@
  */
 
 /**
- * Description of daoReserva
+ * Description of daoUsuario
  *
  * @author FABIO
  */
-Class daoReserva {
-
-	var $database;
+class daoUsuario {
+    var $database;
 
     /**
      * constructor de la clase
      */
-    function daoReserva($db) {
+    function daoUsuario($db) {
         $this->database = $db;
     }
 
-    function getReservas($filtro){
-            $sql = "";
+    function crearUsuario($user, $pass){
+            $sql = "CREATE USER $user WITH PASSWORD '$pass';"
+                    . "GRANT r_avitour_user to $user;";
             $res = $this->database->ejecutarConsulta($sql);
-            $arr = array();
-            while ($row = pg_fetch_row($res)) {
-                    $arr[count($arr)] = $row;
-            }
-            return $arr;
+            return $res;
     }
 }
-?>
