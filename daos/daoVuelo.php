@@ -30,7 +30,7 @@ Class daoVuelo{
                     . "WHERE v.k_ciudad_origen = c.k_ciudad "
                     . "AND v.k_ciudad_destino = c2.k_ciudad AND $filtro";
             $res = $this->database->ejecutarConsulta($sql);
-            $arr = $this->database->transfirmarResultado($res);
+            $arr = $this->database->transformarResultado($res);
             return $arr;
     }
 }

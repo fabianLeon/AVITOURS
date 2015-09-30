@@ -7,13 +7,16 @@
     <body>
         <!-- Navigation -->
         <?php include('templates/header.php'); ?>
-
         <div class="container">
             <div class="canvas">
                 <canvas id="canvas" width="600" height="600">
                     Tu navegador no soporta canvas.
                 </canvas>
-                <button type="submit" class="btn btn-warning" onclick="reservar()">Reservar</button>
+                <div class="col-lg-4 text-center">
+                    <div id="success"></div>
+                    <br><br><br><br><br><br><br><br><br><br>
+                    <button type="submit" class="btn btn-xl"onclick="reservar()">Reservar</button>
+                </div>
             </div>
         </div>
     </body>

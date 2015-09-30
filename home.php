@@ -13,6 +13,7 @@ session_start();
         <div class="container">
 
             <div class="wrapper">
+                <div class="panel-heading"><h2>Vuelos</h2></div>
                 <div class="panel panel-warning" >
                     <div class="panel-body">
                         <form class="form-signin" method = "POST" action = home.php>    

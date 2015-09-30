@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-heading">Desea Reservar ?</div>
-                    <a href="#registro" class="page-scroll btn btn-xl">Reservar</a>
+                    <a href="home.php" class="page-scroll btn btn-xl">Reservar</a>
                 </div>
             </div>
         </header>

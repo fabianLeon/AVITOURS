@@ -3,7 +3,6 @@ var sup_der = [355, 24];
 var inf_izq = [250, 465];
 var inf_der = [355, 465];
 
-var reservas = new Array();
 
 var ancho = sup_der[0] - sup_izq[0];
 var alto = inf_der[1] - sup_izq[1];
@@ -24,31 +23,33 @@ function init()
 
     for (var i = 0; i < avion.length; i++) {
         for (var j = 0; j < avion[i].length; j++) {
-            if (avion[i][j] == 0) {
-                c.beginPath();
-                c.fillStyle = '#19B5FE';
-            } else if (avion[i][j] == 1) {
-                c.beginPath();
-                c.fillStyle = '#F22613';
-            } else if (avion[i][j] == 3) {
-                c.beginPath();
-                c.fillStyle = '#F7CA18';
-            }
-            c.rect(sup_izq[0] + tamX * j, sup_izq[1] + tamY * i, tamX, tamY);
-            c.fill();
-            c.strokeStyle = '#FFF'
-            if (avion[i][j] !== 2) {
+
+            var arrayTemp = (avion[i][j]).split('*');
+            var est = arrayTemp[0];
+            var nom = arrayTemp[1];
+            if (est !== '') {
+                if (est == 0) {
+                    c.beginPath();
+                    c.fillStyle = '#19B5FE';
+                } else if (est == 1) {
+                    c.beginPath();
+                    c.fillStyle = '#F22613';
+                } else if (est == 2) {
+                    c.beginPath();
+                    c.fillStyle = '#F7CA18';
+                }
+                c.rect(sup_izq[0] + tamX * j, sup_izq[1] + tamY * i, tamX, tamY);
+                c.fill();
+
                 c.beginPath();
                 c.font = '6pt verdana';
                 c.fillStyle = '#fff';
-                c.fillText(NtoA(j) + i, (sup_izq[0] + tamX * j) + 1, (sup_izq[1] + tamY + tamY * i) - 2);
+                c.fillText(nom, (sup_izq[0] + tamX * j) + 1, (sup_izq[1] + tamY + tamY * i) - 2);
             }
 
         }
     }
 }
-
-
 function getPosition(event)
 {
     var x = new Number();
@@ -74,26 +75,35 @@ function getPosition(event)
     if ((x > sup_izq[0]) && (x < sup_der[0]) && (y < inf_der[1]) && (y > sup_der[1])) {
         x = Math.floor((x - sup_izq[0]) / tamX);
         y = Math.floor((y - sup_izq[1]) / tamY);
+        if (avion[y][x] !== "") {
+            var arrayTemp = (avion[y][x]).split('*');
+            est = arrayTemp[0];
+            nom = arrayTemp[1];
 
-        if (avion[y][x] == 0) {
-            avion[y][x] = 3;
-            init();
-        } else if (avion[y][x] == 1) {
-            alert(x + " " + y + " La silla ya ha sido reservada :(");
+            if (est == 0) {
+                avion[y][x] = 2 + "*" + nom;
+                init();
+            } else if (est == 1) {
+                alert("La silla " + nom + " ya ha sido reservada");
+            }
         }
     }
 }
 
 function reservar() {
-    var x = "", y = "", cad = "";
+    var sillas = "", est = 0, nom = "", arrayTemp;
     for (var i = 0; i < avion.length; i++) {
         for (var j = 0; j < avion[i].length; j++) {
-            if (avion[i][j] == 3) {
-               x += j+",";
-               y += i+",";
+            if (avion[i][j] != "") {
+                arrayTemp = (avion[i][j]).split('*');
+                est = arrayTemp[0];
+                nom = arrayTemp[1];
+                if (est == 2) {
+                    sillas += nom + ",";
+                }
             }
         }
     }
-   var cad = "?x="+x.substring(0, x.length-1)+";y="+y.substring(0, y.length-1)+";n="+(x.length)/2;
-   location.href = "avion.php"+cad;
+    var cad = "?nombres="+sillas;
+    location.href = "pasajeros.php"+cad;
 }
