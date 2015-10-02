@@ -13,7 +13,7 @@
  */
 Class dao {
 
-	var $link;
+    var $link;
     var $host = null;
     var $usuario = null;
     var $password = null;
@@ -34,6 +34,14 @@ Class dao {
     /**
      * hace la coneccion con la base de datos
      */
+//    function conectarCreador() {
+//        $this->link = pg_connect("host=$this->host dbname=$this->database user=" . DB_USER_CREATOR . " password=" . DB_PASSWORD_CREATOR);
+//    }
+	
+//	function conectarConsulta() {
+//        $this->link = pg_connect("host=$this->host dbname=$this->database user=" . DB_USER_CONS . " password=" . DB_PASSWORD_CONS);
+//    }
+
     function conectar() {
         $this->link = pg_connect("host=$this->host dbname=$this->database user=$this->usuario password=$this->password");
     }
@@ -49,24 +57,23 @@ Class dao {
         return $result;
     }
 
-    
-    function transformarResultado($result){
+    function transformarResultado($result) {
         $res = array();
-        while($row =  pg_fetch_row($result)){
+        while ($row = pg_fetch_row($result)) {
             $res[count($res)] = $row;
         }
         return $res;
     }
-    
-    function getTitulos($result){
+
+    function getTitulos($result) {
         $num = pg_num_fields($result);
         $titulos = array();
-        for($i = 0;$i<$num;$i++){
+        for ($i = 0; $i < $num; $i++) {
             $titulos[$i] = pg_field_name($result, $i);
         }
         return $titulos;
     }
-    
+
     /**
      * almacena en la base datos de acuerdo a los parametros
      *
@@ -76,28 +83,26 @@ Class dao {
      */
     function insertarRegistro($tabla, $campos, $valores) {
         $temp = "";
-		$tempCampos = "";
-        foreach ($valores as $v){
-            if($v == "''"){
+        $tempCampos = "";
+        foreach ($valores as $v) {
+            if ($v == "''") {
                 $temp .= 'null,';
-            }else{
-                $temp .= $v.",";
+            } else {
+                $temp .= $v . ",";
             }
         }
-		foreach ($campos as $c){
-            $tempCampos .= $c.",";
+        foreach ($campos as $c) {
+            $tempCampos .= $c . ",";
         }
-        $temp = substr($temp, 0,  strlen($temp)-1);
+        $temp = substr($temp, 0, strlen($temp) - 1);
         $sql = "insert into `" . $tabla . "`(" . $tempCampos . ")values(" . $temp . ")";
         //echo $sql."<hr>";
         return pg_query($sql);
     }
-	
-	function getQueryError($result){
-		return pg_result_error_field($result, PGSQL_DIAG_SQLSTATE);
-	}
-    
 
+    function getQueryError($result) {
+        return pg_result_error_field($result, PGSQL_DIAG_SQLSTATE);
+    }
 
     /**
      * borra registros de la base datos de acuerdo a los parametros
@@ -124,7 +129,7 @@ Class dao {
         $cont = 0;
 
         foreach ($campos as $c) {
-            if($valores[$cont] == "''" || $valores[$cont] == "")
+            if ($valores[$cont] == "''" || $valores[$cont] == "")
                 $sql .= $c . " = null , ";
             else
                 $sql .= $c . " = " . $valores[$cont] . ", ";
@@ -134,12 +139,12 @@ Class dao {
         $sql .= " where " . $condicion;
         //echo ("<br>actualizar:".$sql."<hr>");
         return pg_query($sql);
-    }  
-    
-	
-	public function cerrarConexion(){
-		pg_close($this->link);
-	}
+    }
+
+    public function cerrarConexion() {
+        pg_close($this->link);
+    }
 
 }
+
 ?>

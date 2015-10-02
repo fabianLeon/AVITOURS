@@ -22,10 +22,10 @@
                     <a class="page-scroll" href="#registro">Registro</a>
                 </li>
                 <li>
-                    <form class="navbar-form navbar-left" role="search">
+                    <form class="navbar-form navbar-left" role="search" action="controller/session_controller.php">
                         <div class="form-group">
-                            <input style="width: 120px" type="text" class="form-control" placeholder="Usuario">
-                            <input style="width: 120px" type="password" class="form-control" placeholder="Contrase&ntilde;a">
+                            <input style="width: 120px" type="text" name="db_user" id="db_user" class="form-control" placeholder="Usuario">
+                            <input style="width: 120px" type="password" name="db_pass" id="db_pass" class="form-control" placeholder="Contrase&ntilde;a">
                         </div>
                         <button type="submit" class="btn btn-warning">Ingresar</button>
                     </form>

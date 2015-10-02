@@ -1,3 +1,8 @@
+<?php
+session_start();
+session_destroy(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-heading">Desea Reservar ?</div>
-                    <a href="home.php" class="page-scroll btn btn-xl">Reservar</a>
+                    <a href="controller/session_controller.php" class="page-scroll btn btn-xl">Reservar</a>
                 </div>
             </div>
         </header>
@@ -32,7 +37,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form name="sentMessage" id="contactForm" novalidate>
+                        <form name="sentMessage" action="controller/user_controller.php">
                             <div class="row">
                                 <div class="col-md-2">
 
@@ -47,11 +52,11 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Correo Electronico *" name="apellido1" id="apellido1"required data-validation-required-message="Ingrese su apellido.">
+                                        <input type="text" class="form-control" placeholder="Correo Electronico *" name="email" id="email"required data-validation-required-message="Ingrese su nombre de usuario.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password *" id="phone" required data-validation-required-message="ingrese su password.">
+                                        <input type="password" class="form-control" placeholder="Password *" name="pass" id="pass" required data-validation-required-message="ingrese su password.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
@@ -65,11 +70,11 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="tel" class="form-control" placeholder="Telefono *" id="phone" required data-validation-required-message="Ingrese su telefono.">
+                                        <input type="tel" class="form-control" placeholder="Telefono *" nombre "phone" id="phone" required data-validation-required-message="Ingrese su telefono.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="confirme su Password *" id="phone" required data-validation-required-message="Confirme su password">
+                                        <input type="password" class="form-control" placeholder="confirme su Password *" name="rpass" id="rpass" required data-validation-required-message="Confirme su password">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>

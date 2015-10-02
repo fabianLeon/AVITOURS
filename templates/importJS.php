@@ -9,7 +9,6 @@
 <script src="js/cbpAnimatedHeader.js"></script>
 <!-- Contact Form JavaScript -->
 <script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/agency.js"></script>
 

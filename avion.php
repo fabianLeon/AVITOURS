@@ -1,6 +1,16 @@
 <html>
+    <?php
+    include 'daos/dao.php';
+    include 'conf.php';
+    include 'daos/daoAvion.php';
+    session_start();
+    $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
+    $dao->conectar();
+    $daoAvion = new daoAvion($dao);
+    ?>
     <head>
-        <?php include './templates/importCss.php'; ?>
+        <?php include './templates/importCss.php';
+        ?>
     </head>
     <script> var avion = <?php include './model/avion_model.php'; ?></script>
     <script src="js/avion.js"></script>

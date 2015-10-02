@@ -24,15 +24,11 @@
                             <span class='glyphicon glyphicon-user' aria-hidden='true'></span>
 
                                 <?php
-                                    echo(" ");
-                                    echo("nombre");
-                                    echo(" ");
-                                    echo("apellido");
-                                    echo( "correo");
-//                                echo(" ");
-//                                echo($_SESSION['nombre']);
-//                                echo(" ");
-//                                echo($_SESSION['apellido']);
+                                session_start();
+                                echo(" ");
+                                echo($_SESSION['db_user']);
+                                echo(" ");
+                                echo($_SESSION['db_user']);
 //                                echo( "<small> " . $_SESSION['correo'] . "</small>");
                                 ?><span class = "caret"></span>
                         </a>
