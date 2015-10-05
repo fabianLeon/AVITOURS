@@ -7,6 +7,7 @@ var ancho = sup_der[0] - sup_izq[0];
 var alto = inf_der[1] - sup_izq[1];
 var tamX = ancho / avion[0].length;
 var tamY = alto / avion.length;
+var cont = 1;
 
 document.addEventListener("DOMContentLoaded", init, false);
 
@@ -79,12 +80,20 @@ function getPosition(event)
             est = arrayTemp[0];
             nom = arrayTemp[1];
 
-            if (est == 0) {
-                avion[y][x] = 2 + "*" + nom;
-                init();
-            } else if (est == 1) {
+            if (est == 0 ) {
+                if(cont <= numero){
+                    cont ++;
+                    avion[y][x] = 2 + "*" + nom;
+                    init();
+                }
+            }else if(est == 1) {
                 alert("La silla " + nom + " ya ha sido reservada");
+            }else if(est == 2) {
+                avion[y][x] = 0 + "*" + nom;
+                cont --;
+                init();
             }
+            
         }
     }
 }

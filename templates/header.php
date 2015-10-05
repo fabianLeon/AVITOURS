@@ -19,9 +19,6 @@
                     </li>
 
                     <li class = "dropdown">
-
-
-
                             <?php
                             session_start();
                             if ($_SESSION['db_user'] == 'u_avitour_consulta') {
