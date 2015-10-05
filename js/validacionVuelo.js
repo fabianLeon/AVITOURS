@@ -5,17 +5,19 @@
  */
 
 
-function activar_regreso(){
+function activar_regreso() {
     document.vuelos.fecha_regreso.disabled = false;
 }
-function desactivar_regreso(){
+function desactivar_regreso() {
     document.vuelos.fecha_regreso.disabled = true;
 }
 
-function origen_destino(){
+function origen_destino() {
     var a = document.vuelos.origen;
     var b = document.vuelos.destino;
-    String(a.value.toLowerCase()) == String(b.value.toLowerCase())
-    alert("La ciudad de origen no puede ser igual que la ciudad de destino");
-    b.value="";
+    if (String(a.value.toLowerCase()) == String(b.value.toLowerCase())) {
+        alert("La ciudad de origen no puede ser igual que la ciudad de destino");
+        b.value = "";
+    }
+
 }

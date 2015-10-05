@@ -70,11 +70,11 @@ session_destroy();
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="tel" class="form-control" placeholder="Telefono *" nombre "phone" id="phone" required data-validation-required-message="Ingrese su telefono.">
+                                        <input type="tel" class="form-control" placeholder="Telefono *" nombre="phone" id="phone" >
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="confirme su Password *" name="rpass" id="rpass" required data-validation-required-message="Confirme su password">
+                                        <input type="password" class="form-control" placeholder="confirme su Password *" name="rpass" id="rpass" >
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>

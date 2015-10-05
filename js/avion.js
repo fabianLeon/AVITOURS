@@ -3,7 +3,6 @@ var sup_der = [355, 24];
 var inf_izq = [250, 465];
 var inf_der = [355, 465];
 
-
 var ancho = sup_der[0] - sup_izq[0];
 var alto = inf_der[1] - sup_izq[1];
 var tamX = ancho / avion[0].length;

@@ -246,6 +246,7 @@ header {
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
+    size: auto;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
