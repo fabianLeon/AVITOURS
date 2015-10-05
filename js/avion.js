@@ -80,26 +80,29 @@ function getPosition(event)
             est = arrayTemp[0];
             nom = arrayTemp[1];
 
-            if (est == 0 ) {
-                if(cont <= numero){
-                    cont ++;
+            if (est == 0) {
+                if (cont <= numero) {
+                    cont++;
                     avion[y][x] = 2 + "*" + nom;
                     init();
+                } else {
+                    alert("No puede seleccionar la silla " + nom + ", Numero de pasajeros completos");
                 }
-            }else if(est == 1) {
+            } else if (est == 1) {
                 alert("La silla " + nom + " ya ha sido reservada");
-            }else if(est == 2) {
+            } else if (est == 2) {
                 avion[y][x] = 0 + "*" + nom;
-                cont --;
+                cont--;
                 init();
             }
-            
+
         }
     }
 }
 
 function reservar() {
     var sillas = "", est = 0, nom = "", arrayTemp;
+
     for (var i = 0; i < avion.length; i++) {
         for (var j = 0; j < avion[i].length; j++) {
             if (avion[i][j] != "") {
@@ -112,6 +115,11 @@ function reservar() {
             }
         }
     }
-    var cad = "?nombres="+sillas;
-    location.href = "pasajeros.php"+cad;
+    if (cont < numero +1){
+        alert("Debe seleccionar todas las sillas de los pasajeros");
+    } else {
+        var cad = "?nombres=" + sillas;
+        location.href = "pasajeros.php" + cad;
+    }
+
 }
