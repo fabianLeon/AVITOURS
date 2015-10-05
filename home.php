@@ -67,7 +67,7 @@
             <?php
             $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Tarifa1", "Tarifa2", "Tarifa3", "Tarifa4", "Tarifa5", "Tarifa6"];
             $tabla = new Tabla($titulos, $tablaVuelos);
-            $tabla->EscribirRegistros("avion.php", "home.php");
+            $tabla->EscribirRegistros("avion.php", "");
             echo ($tabla->getTabla());
             ?>
         </div> 

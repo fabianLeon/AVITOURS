@@ -14,27 +14,35 @@
                             Reservas<span class = "caret"></span>
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
-                        <li><a href = 'buscar.php'>Consultar Reservas</a></li>
+                            <li><a href = 'buscar.php'>Consultar Reservas</a></li>
                         </ul>
                     </li>
 
                     <li class = "dropdown">
 
-                        <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-                            <span class='glyphicon glyphicon-user' aria-hidden='true'></span>
 
-                                <?php
-                                session_start();
-                                echo(" ");
-                                echo($_SESSION['db_user']);
-                                echo(" ");
-                                echo($_SESSION['db_user']);
-//                                echo( "<small> " . $_SESSION['correo'] . "</small>");
-                                ?><span class = "caret"></span>
-                        </a>
-                        <ul class = "dropdown-menu" role = "menu">
-                            <li><a href = "index.php"><strong>Cerrar Sesi&oacute;n</strong></a></li>
-                        </ul>
+
+                            <?php
+                            session_start();
+                            if ($_SESSION['db_user'] == 'u_avitour_consulta') {
+                            ?>
+                            <form class="navbar-form navbar-left" method="GET" action="controller/session_controller.php">
+                                <div class="form-group">
+                                    <input style="width: 120px" type="text" name="db_user" id="db_user" class="form-control" placeholder="Usuario">
+                                    <input style="width: 120px" type="password" name="db_pass" id="db_pass" class="form-control" placeholder="Contrase&ntilde;a">
+                                </div>
+                                <button type="submit" class="btn btn-warning">Ingresar</button>
+                            </form>
+                            <?php } else{ ?>
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                <span class='glyphicon glyphicon-user' aria-hidden='true'></span>
+                                <span class = "caret"></span>
+                                 <?php echo($_SESSION['db_user']);?>
+                            </a>
+                            <ul class = "dropdown-menu" role = "menu">
+                                <li><a href = "index.php"><strong>Cerrar Sesi&oacute;n</strong></a></li>
+                            </ul>
+                        <?php } ?>
                     </li>
                 </ul>
             </div><!--/.navbar-collapse -->
