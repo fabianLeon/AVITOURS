@@ -21,15 +21,12 @@
         </div>
     </body>
     <?php
-    include 'daos/dao.php';
-    include 'conf.php';
-    include 'daos/daoAvion.php';
-    
-    $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
-    $dao->conectar();
-    $daoAvion = new daoAvion($dao);
+        include './controller/avion_controller.php'
     ?>
-    <script> var avion = <?php include './model/avion_model.php'; ?></script>
+    <script> 
+        var avion = <?php include './model/avion_model.php'; ?>
+        var numero = <?php echo $numero?>;
+    </script>
     <script src="js/avion.js"></script>
     <?php
     include './templates/importJS.php';

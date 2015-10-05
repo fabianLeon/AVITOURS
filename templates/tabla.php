@@ -33,17 +33,18 @@ Class Tabla {
         foreach ($this->tabla as $registro) {
             $this->t .= "<tr>";
             foreach ($registro as $campo) {
-                
+
                 $this->t .= "<th style='text-align:center'>$campo</th>";
             } $this->t .= "<th>";
-            if ($linkX != "") {
-                $this->t .= "<a href='$linkX?id=$registro[0]' class='btn btn-warning' role='button' >
-                            <span class='glyphicon glyphicon-search' aria-hidden='true'>
+            if ($linkV != "") {
+                $this->t .= "<a href='$linkV?id=$registro[0]' class='btn btn-Default ' role='button' >
+                            <span class='glyphicon glyphicon-remove-circle' aria-hidden='true'>
                             </span>
                          </a>";
+                
             }
-            $this->t .= "<a href='$linkV?id=$registro[0]' class='btn btn-Default ' role='button' >
-                            <span class='glyphicon glyphicon-remove-circle' aria-hidden='true'>
+            $this->t .= "<a href='$linkX?id=$registro[0]' class='btn btn-warning' role='button' >
+                            <span class='glyphicon glyphicon-search' aria-hidden='true'>
                             </span>
                          </a>";
             $this->t .= "</th>";
