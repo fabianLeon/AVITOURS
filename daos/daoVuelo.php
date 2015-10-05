@@ -34,7 +34,7 @@ Class daoVuelo{
             return $arr;
     }
 	
-	function getVuelosTarifas($filtro){
+	function getVuelosTarifas($filtro, $grupo){
 		$sql = "SELECT k_tipo_tarifa from avitour.tipo_tarifa";
 		$res = $this->database->ejecutarConsulta($sql);
         $tarifas = $this->database->transformarResultado($res);
@@ -63,7 +63,7 @@ Class daoVuelo{
 						$tarifa = $this->database->transformarResultado($res);
 
 						if(count($tarifa)>0){
-							$vuelos[$i] = array_merge($vuelos[$i],array('<input type="radio" name="tarifas" value="'.$vuelo[0].'_'.$tipo[0].'"><br>'.$tarifa[0][0]));
+							$vuelos[$i] = array_merge($vuelos[$i],array('<input type="radio" name="'.$grupo.'" value="'.$vuelo[0].'_'.$tipo[0].'" required =""><br>'.$tarifa[0][0]));
 						}else{
 							$vuelos[$i] = array_merge($vuelos[$i],array('<p style="color:#F9690E; text-align:center;"> No Disponible </p>'));
 						}

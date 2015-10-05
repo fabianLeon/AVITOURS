@@ -28,11 +28,10 @@ class daoAvion {
 	function getSillasReserva($idVuelo){
 		$sql = "SELECT querySilla.*, 
 				CASE WHEN querySilla.k_silla IN 
-				(SELECT k_silla 
-				FROM avitour.reserva r, avitour.vuelo v, avitour.avion a, avitour.silla s 
+				(SELECT s.k_silla 
+				FROM avitour.reserva r, avitour.vuelo v, avitour.detalle_silla s 
 				WHERE r.k_vuelo = v.k_vuelo
-					AND v.k_avion = a.k_avion 
-					AND a.k_tipo_avion = s.k_tipo_avion
+					AND r.k_reserva= s.k_reserva
 					AND v.k_vuelo = $idVuelo) THEN '1'
 				ELSE '0'
 				END 

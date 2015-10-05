@@ -1,6 +1,7 @@
 <?php
 
-$avion = $daoAvion->getSillasReserva($_GET['id']);
+$vuelo= split("_", $_GET['vuelos_ida']);
+$avion = $daoAvion->getSillasReserva($vuelo[0]);
 $fila = count($avion);
 $column = count($avion[0]);
 

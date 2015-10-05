@@ -54,6 +54,26 @@ Class Tabla {
         $this->t .= "</tbody></table></div>";
     }
 
+    function escribirRegistros2() {
+        $this->t .= " <div class='panel panel-warning'>
+                       <table class='table table-bordered'>
+                       <thead>";
+        foreach ($this->titulos as $valor) {
+            $this->t .= "<th>$valor</th>";
+        }
+        $this->t .= "</tr></thead><tbody>";
+        foreach ($this->tabla as $registro) {
+            $this->t .= "<tr>";
+            foreach ($registro as $campo) {
+
+                $this->t .= "<th style='text-align:center'>$campo</th>";
+            }
+        }
+
+        $this->t .= "</tr>";
+        $this->t .= "</tbody></table></div>";
+    }
+    
     function getTabla() {
         return $this->t;
     }

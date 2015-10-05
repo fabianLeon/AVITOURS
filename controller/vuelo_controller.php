@@ -18,9 +18,10 @@ if ($_POST){
     $fecha_salida   = $_POST["fecha_salida"];
     $fecha_regreso  = $_POST["fecha_regreso"];
     $pasajeros      = $_POST["pasajeros"];
+    $_SESSION['Numero_pasajeros']       = $pasajeros;
     $tablaVuelos = $daoVuelo->getVuelosTarifas("LOWER(c.n_nombre) LIKE LOWER('$origen%') "
             . "AND LOWER(c2.n_nombre) LIKE LOWER('$destino%') "
-            . "AND v.d_fecha_salida BETWEEN '$fecha_salida $hora_inicio' AND '$fecha_salida $hora_fin'");
+            . "AND v.d_fecha_salida BETWEEN '$fecha_salida $hora_inicio' AND '$fecha_salida $hora_fin'","vuelos_ida");
 }else{
     
 }

@@ -100,6 +100,14 @@ function getPosition(event)
     }
 }
 
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+        });
+        return vars;
+    }
+
 function reservar() {
     var sillas = "", est = 0, nom = "", arrayTemp;
 
@@ -119,7 +127,7 @@ function reservar() {
         alert("Debe seleccionar todas las sillas de los pasajeros");
     } else {
         var cad = "?nombres=" + sillas;
-        location.href = "pasajeros.php" + cad;
+        location.href = "pasajeros.php" + cad +"&vuelos_ida="+ getUrlVars()['vuelos_ida'];
     }
 
 }

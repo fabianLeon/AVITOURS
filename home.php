@@ -63,13 +63,16 @@
                         </form>
                     </div>
                 </div>
-            </div> 
+            </div>
+            <form name="lista" id="lista" method = "GET" action="avion.php"> 
             <?php
             $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Economica Flexi", "Economica Promo", "Economica Sin Restricciones", "Ejecutiva Flexi", "Ejecutiva Promo", "Ejecutiva Sin Restriccion"];
             $tabla = new Tabla($titulos, $tablaVuelos);
-            $tabla->EscribirRegistros("avion.php", "");
+            $tabla->escribirRegistros2();
             echo ($tabla->getTabla());
             ?>
+                <button class= "submit" type="submit">Siguiente</button>  
+            </form>
         </div> 
 
         <script src="js/validacionVuelo.js"></script>

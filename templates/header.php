@@ -14,7 +14,7 @@
                             Reservas<span class = "caret"></span>
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
-                            <li><a href = 'buscar.php'>Consultar Reservas</a></li>
+                            <li><a href = 'reservas.php'>Consultar Reservas</a></li>
                         </ul>
                     </li>
 
