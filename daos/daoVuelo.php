@@ -56,7 +56,7 @@ Class daoVuelo{
 			
 			foreach(array("Economica","Ejecutiva") as $clase){
 				foreach($tarifas as $tipo){
-					$sql3 = "SELECT cast(v_valor as money) from avitour.tarifa t WHERE t.k_vuelo = ".$vuelo[0]." AND t.k_clase = 'Economica' AND k_tipo_tarifa = '".$tipo[0]."';";
+					$sql3 = "SELECT cast(v_valor as money) from avitour.tarifa t WHERE t.k_vuelo = ".$vuelo[0]." AND t.k_clase = '$clase' AND k_tipo_tarifa = '".$tipo[0]."';";
 					//echo $sql3."<br>";
 					$res = $this->database->ejecutarConsulta($sql3);
 					try{

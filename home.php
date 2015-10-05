@@ -19,19 +19,19 @@
                             <div class="col-sm-2">
                                 <h5>Direcci&oacute;n</h5><br>
                                 <div class="col-sm-1">
-                                    <input type="radio" name="direccion[]" onclick="desactivar_regreso()"value="ida">
+                                    <input type="radio" name="direccion[]" onclick="desactivar_regreso()"value="Ida" checked="">
                                 </div><p>ida</p>
                                 <div class="col-sm-1">
-                                    <input type="radio" name="direccion[]" onclick="activar_regreso()" value="ida y regreso" checked="">
+                                    <input type="radio" name="direccion[]" onclick="activar_regreso()" value="Ida y regreso">
                                 </div><p>ida-regreso</p>
                             </div>
                             <div class="col-sm-2">
                                 <h5>Clase</h5><br>
                                 <div class="col-sm-1">
-                                    <input type="radio" name="clase[]" value="ejecutivo" checked=""> 
+                                    <input type="radio" name="clase[]" value="ejecutivo"> 
                                 </div><p>Ejecutivo</p>
                                 <div class="col-sm-1">
-                                    <input type="radio" name="clase[]" value="economico">
+                                    <input type="radio" name="clase[]" value="economico"  checked="">
                                 </div><p>Econ&oacute;mico</p>
                             </div>
 
@@ -65,7 +65,7 @@
                 </div>
             </div> 
             <?php
-            $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Tarifa1", "Tarifa2", "Tarifa3", "Tarifa4", "Tarifa5", "Tarifa6"];
+            $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Economica Flexi", "Economica Promo", "Economica Sin Restricciones", "Ejecutiva Flexi", "Ejecutiva Promo", "Ejecutiva Sin Restriccion"];
             $tabla = new Tabla($titulos, $tablaVuelos);
             $tabla->EscribirRegistros("avion.php", "");
             echo ($tabla->getTabla());
