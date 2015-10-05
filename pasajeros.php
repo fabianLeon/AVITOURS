@@ -9,7 +9,7 @@
         $no = count($sillas);
         ?>
         <div class="container">
-            <form class="form-signin" method = "POST" action = home.php>
+            <form class="form-signin" method = "POST" action = ./controller/reserva_controller.php>
                 <?php
                 for ($i = 0; $i < $no - 1; $i ++) {
                     ?>
@@ -27,7 +27,7 @@
                                 <input type="text" class="form-control" name="<?php echo ($sillas[$i] . "apellido1"); ?>" required="" placeholder="Primer Apellido *"/>
                             </div>
                             <div class="col-sm-2">
-                                <input type="text" class="form-control" name="<?php echo ($sillas[$i] . "apellido2"); ?>" required="" placeholder="Primer Apellido *"/>
+                                <input type="text" class="form-control" name="<?php echo ($sillas[$i] . "apellido2"); ?>" required="" placeholder="Segundo Apellido *"/>
                             </div>
                             <div class="col-sm-2">
                                 <div class="col-sm-4">
@@ -46,6 +46,14 @@
                         </div>
                     </div>
                 <?php } ?>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/>
+                    <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
+                    <input type="text" class="form-control" name="tarjeta" required="" placeholder="Tarjeta de Credito *"/>
+                    <input type="hidden" name="sillas" value="<?phpecho $_GET['nombres'] ?>"/>
+                    <input type="hidden" name="tarifa" value="<?phpecho $_GET['vuelos_ida'] ?>"/>
+                </div>
+                
                 <div class="col-lg-12 text-center">
                     <div id="success"></div>
                     <button type="submit" class="btn btn-xl">Reservar</button>

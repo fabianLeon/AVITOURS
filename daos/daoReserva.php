@@ -1,16 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of daoReserva
- *
- * @author FABIO
- */
+include '../model/reserva.php';
 Class daoReserva {
 
 	var $database;
@@ -44,6 +34,12 @@ Class daoReserva {
     function insertReserva($reserva){
         $reserva->k_reserva = $this->getNextReserva();
         $tabla = "avitour.reserva";
+        $campos = array("k_reserva","k_vuelo","k_tarifa","d_fecha","n_telefono","n_email","n_tarjeta_credito");
+        $this->database->insertarRegistro($tabla, $campos, $reserva->toArray());
+    }
+    
+    function insertSillaPasajero($k_reserva, $k_silla, $k_pasajero){
+        $tabla = "avitour.detalle_silla";
         $campos = array("k_reserva","k_vuelo","k_tarifa","d_fecha","n_telefono","n_email","n_tarjeta_credito");
         $this->database->insertarRegistro($tabla, $campos, $reserva->toArray());
     }

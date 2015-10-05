@@ -1,7 +1,7 @@
 <?php
 
 
-class reserva {
+class Reserva {
     var $k_reserva;
     var $k_vuelo;
     var $k_tarifa;
@@ -79,11 +79,11 @@ class reserva {
     function toArray(){
         return array($this->k_reserva,
             $this->k_vuelo,
-            $this->k_tarifa, 
-            $this->d_fecha,
-            $this->n_telefono,
-            $this->n_email,
-            $this->n_tarjeta_credito);
+            "'$this->k_tarifa'", 
+            "'$this->d_fecha'",
+            "'$this->n_telefono'",
+            "'$this->n_email'",
+            "'$this->n_tarjeta_credito'");
     }
     
 }
