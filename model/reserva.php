@@ -80,7 +80,7 @@ class Reserva {
         return array($this->k_reserva,
             $this->k_vuelo,
             "'$this->k_tarifa'", 
-            "'$this->d_fecha'",
+            "$this->d_fecha",
             "'$this->n_telefono'",
             "'$this->n_email'",
             "'$this->n_tarjeta_credito'");

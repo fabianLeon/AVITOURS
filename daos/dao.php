@@ -95,8 +95,9 @@ Class dao {
             $tempCampos .= $c . ",";
         }
         $temp = substr($temp, 0, strlen($temp) - 1);
-        $sql = "insert into `" . $tabla . "`(" . $tempCampos . ")values(" . $temp . ")";
-        //echo $sql."<hr>";
+        $tempCampos = substr($tempCampos, 0, strlen($tempCampos) - 1);
+        $sql = "insert into " . $tabla . "(" . $tempCampos . ")values(" . $temp . ")";
+        echo $sql."<hr>";
         return pg_query($sql);
     }
 

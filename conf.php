@@ -35,6 +35,8 @@ define('DB_USER_CONS','u_avitour_consulta');
 */
 define('DB_PASSWORD_CONS','u_avitour_consulta');
 
+include './model/Pasajero.php';
+
 /**
 *validacion por ip
 */

@@ -52,7 +52,7 @@ session_destroy();
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Correo Electronico *" name="email" id="email"required data-validation-required-message="Ingrese su nombre de usuario.">
+                                        <input type="text" class="form-control" placeholder="usuario *" name="email" id="email"required data-validation-required-message="Ingrese su nombre de usuario.">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">

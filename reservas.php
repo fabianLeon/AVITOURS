@@ -4,8 +4,8 @@
         <?php
         include './templates/importCss.php';
         include('templates/header.php');
-        include ('controller/reserva_controller.php');
-        include('templates/tabla.php');
+        include ('./controller/reserva_controller.php');
+        include('./templates/tabla.php');
         ?>
     </head>
     <body>  
@@ -22,7 +22,7 @@
             <?php
             
             $tabla = new Tabla($titulos, $tablaReservas);
-            $tabla->EscribirRegistros("", "");
+            $tabla->EscribirRegistros("pago.php", "");
             echo ($tabla->getTabla());
             ?>
         </div> 
