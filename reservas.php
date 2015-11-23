@@ -13,18 +13,13 @@
 
             <div class="wrapper">
                 <div class="panel-heading"><h2>Reservas</h2></div>
-                <div class="panel panel-warning" >
-                    <div class="panel-body">
-                        
-                    </div>
-                </div>
+                <?php
+                $tabla = new Tabla($titulos, $tablaReservas);
+                $tabla->EscribirRegistros("pago.php", "");
+                echo ($tabla->getTabla());
+                ?>
             </div> 
-            <?php
-            
-            $tabla = new Tabla($titulos, $tablaReservas);
-            $tabla->EscribirRegistros("pago.php", "");
-            echo ($tabla->getTabla());
-            ?>
+
         </div> 
 
         <script src="js/validacionVuelo.js"></script>

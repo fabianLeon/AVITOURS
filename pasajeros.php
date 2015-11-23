@@ -46,14 +46,92 @@
                         </div>
                     </div>
                 <?php } ?>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/>
-                    <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
-                    <input type="text" class="form-control" name="tarjeta" required="" placeholder="Tarjeta de Credito *"/>
-                    <input type="hidden" name="nombres" value="<?php echo $_GET['nombres'] ?>"/>
-                    <input type="hidden" name="vuelos_ida" value="<?php echo $_GET['vuelos_ida'] ?>"/>
+                <input type="hidden" name="nombres" value="<?php echo $_GET['nombres'] ?>"/>
+                <input type="hidden" name="vuelos_ida" value="<?php echo $_GET['vuelos_ida'] ?>"/>
+
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="panel-heading"><h2>Pago</h2></div>
+                    <div class="panel panel-warning">
+                        <div class="panel-body">  
+                            <div class="col-sm-6">
+                                <h5>Tarjeta</h5><br>
+
+                                <div class="col-sm-6">
+                                    <img src="img/master-card.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
+                                    <div>
+                                        <input type="radio" name="franquicia[]" value="master-card">
+                                        <label>Master Card</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="img/visa.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
+                                    <div>
+                                        <input type="radio" name="franquicia[]" value="visa">
+                                        <label>Visa</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="img/dinners.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
+                                    <div>
+                                        <input type="radio" name="franquicia[]" value="dinners">
+                                        <label>Dinners Club</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="img/american.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
+                                    <div>
+                                        <input type="radio" name="franquicia[]" value="american">
+                                        <label>American </label>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" name="tarjeta" required="" placeholder="Tarjeta de Credito *"/>
+
+                                <br><label>fecha de vencimiento</label>
+                                <div>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" name="mes" required="" placeholder="Mes *"/>
+                                    </div><div class="col-sm-6">
+                                        <input type="number" class="form-control" name="ano" required="" placeholder="A&ntilde;o *"/>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-6">
+                                <h5>Titular</h5><br>
+                                <input type="text" class="form-control" name="priNombre" required="" placeholder="Primer Nombre *"/><br>
+                                <input type="text" class="form-control" name="segNombre" required="" placeholder="inicial Segundo Nombre *"/><br>
+                                <input type="text" class="form-control" name="tarjeta" required="" placeholder="Primer apellido *"/><br>
+                                <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/><br>
+                                <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
+
+                                <br>
+                                <div class="col-sm-6">
+                                    <label>Tipo Documento</label><br>
+                                    <select class="form-control" id="sel1">
+                                        <option>Seleccione ... </option>
+                                        <option>CC</option>
+                                        <option>TI</option>
+                                        <option>PP</option>
+                                        <option>LM</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Numero</label><br>
+                                    <input type="text" class="form-control" name="numero_documento" required="" placeholder="No. Documento *"/>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <h5>Franquicia</h5><br>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                
+
                 <div class="col-lg-12 text-center">
                     <div id="success"></div>
                     <button type="submit" class="btn btn-xl">Reservar</button>
@@ -62,6 +140,9 @@
         </div>
 
     </body>
+    <script>
+        $('.selectpicker').selectpicker();
+    </script>
     <?php
     include './templates/importJS.php';
     ?>

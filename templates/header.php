@@ -3,7 +3,9 @@
         <!--Brand and toggle get grouped for better mobile display -->
         <div class = "navbar-default">
 
-            <a class="navbar-brand" href="home.php">Avitours</a>
+            <a class="navbar-brand page-scroll" href="index.php">
+                 <img style="max-width:215px; margin-top: -15px; margin-left: -7%;" src="img/Logo-COLOR-AM.png">
+            </a>
 
             <!--Collect the nav links, forms, and other content for toggling -->
             <div class = "collapse navbar-collapse" id = "bs-example-navbar-collapse-1">
@@ -19,9 +21,9 @@
                     </li>
 
                     <li class = "dropdown">
-                            <?php
-                            session_start();
-                            if ($_SESSION['db_user'] == 'u_avitour_consulta') {
+                        <?php
+                        session_start();
+                        if ($_SESSION['db_user'] == 'u_avitour_consulta') {
                             ?>
                             <form class="navbar-form navbar-left" method="GET" action="controller/session_controller.php">
                                 <div class="form-group">
@@ -30,11 +32,11 @@
                                 </div>
                                 <button type="submit" class="btn btn-warning">Ingresar</button>
                             </form>
-                            <?php } else{ ?>
+                        <?php } else { ?>
                             <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
                                 <span class='glyphicon glyphicon-user' aria-hidden='true'></span>
                                 <span class = "caret"></span>
-                                 <?php echo($_SESSION['db_user']);?>
+                                <?php echo($_SESSION['db_user']); ?>
                             </a>
                             <ul class = "dropdown-menu" role = "menu">
                                 <li><a href = "index.php"><strong>Cerrar Sesi&oacute;n</strong></a></li>

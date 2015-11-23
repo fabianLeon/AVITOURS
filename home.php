@@ -65,20 +65,22 @@
                 </div>
             </div>
             <form name="lista" id="lista" method = "GET" action="avion.php"> 
-            <?php
-            $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Economica Flexi", "Economica Promo", "Economica Sin Restricciones", "Ejecutiva Flexi", "Ejecutiva Promo", "Ejecutiva Sin Restriccion"];
-            $tabla = new Tabla($titulos, $tablaVuelos);
-            $tabla->escribirRegistros2();
-            echo ($tabla->getTabla());
-            ?>
-                <button class= "submit" type="submit">Siguiente</button>  
+                <?php
+                $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", "Economica Flexi", "Economica Promo", "Economica Sin Restricciones", "Ejecutiva Flexi", "Ejecutiva Promo", "Ejecutiva Sin Restriccion"];
+                $tabla = new Tabla($titulos, $tablaVuelos);
+                $tabla->escribirRegistros2();
+                echo ($tabla->getTabla());
+                ?>
+                <div class="col-lg-offset-10">
+                    <button class= "btn btn-lg btn-warning btn-block" type="submit">Siguiente</button>
+                </div>
             </form>
         </div> 
 
         <script src="js/validacionVuelo.js"></script>
-    </body>
-    <?php
-    include './templates/importJS.php';
-    ?>
 
+        <?php
+            include './templates/importJS.php';
+        ?>
+    </body>
 </html>   

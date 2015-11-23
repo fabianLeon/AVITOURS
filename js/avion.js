@@ -99,14 +99,13 @@ function getPosition(event)
         }
     }
 }
-
-    function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-        });
-        return vars;
-    }
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+    });
+    return vars;
+}
 
 function reservar() {
     var sillas = "", est = 0, nom = "", arrayTemp;
@@ -129,5 +128,4 @@ function reservar() {
         var cad = "?nombres=" + sillas;
         location.href = "pasajeros.php" + cad +"&vuelos_ida="+ getUrlVars()['vuelos_ida'];
     }
-
 }

@@ -8,7 +8,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Avitours</a>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                 <img style="max-width:150px; margin-left: -7%;" src="img/Logo-COLOR-AM-index.png">
+            </a>
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
