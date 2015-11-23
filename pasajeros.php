@@ -123,10 +123,6 @@
 
                             </div>
 
-                            <div class="col-sm-4">
-                                <h5>Franquicia</h5><br>
-
-                            </div>
                         </div>
                     </div>
 
