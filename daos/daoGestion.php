@@ -20,6 +20,12 @@ class daoGestion {
             $result = $this->database->ejecutarConsulta($sql);
             return $this->database->transformarResultado($result);
     }
+    
+    function getCiudades(){
+            $sql = "SELECT k_ciudad, n_nombre FROM avitour.ciudad ORDER BY n_nombre";
+            $result = $this->database->ejecutarConsulta($sql);
+            return $this->database->transformarResultado($result);
+    }
 
     function getTipoAvion(){
             $sql = "SELECT k_tipo_avion, n_nombre FROM avitour.tipo_avion ORDER BY n_nombre";
