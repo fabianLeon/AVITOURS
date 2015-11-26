@@ -4,7 +4,7 @@
         <?php
         include ('./templates/importCss.php');
         include('templates/headerAdmin.php');
-        include ('controller/ciudad_controller.php');
+        include ('controller/vuelos_controller.php');
         include('templates/tabla.php');
         ?>
     </head>
@@ -60,8 +60,8 @@
                                     <div class="col-sm-6">
                                         <select class="form-control" id="ciudad_origen[]">
                                             <option>Seleccione ... </option>
-                                            <?php foreach ($ciudad as $ciudades) { ?>
-                                                <option id= '<?php echo $ciudad . id ?>'> <?php echo $ciudad . value ?> ></option>
+                                            <?php foreach ($ciudades as $ciudad) { ?>
+                                                <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>
@@ -74,8 +74,8 @@
                                     <div class="col-sm-6">
                                         <select class="form-control" id="ciudad_destino[]">
                                             <option>Seleccione ... </option>
-                                            <?php foreach ($ciudad as $ciudades) { ?>
-                                                <option id= '<?php echo $ciudad. id ?>'> <?php echo $ciudad . value ?> ></option>
+                                            <?php foreach ($ciudades as $ciudad) { ?>
+                                                <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>
@@ -88,7 +88,7 @@
                                     <div class="col-sm-6">
                                         <select class="form-control" id="aviones[]">
                                             <option>Seleccione ... </option>
-                                            <?php foreach ($avion as $aviones) { ?>
+                                            <?php foreach ($aviones as $avion) { ?>
                                                 <option id= '<?php echo $avion.id?>'> <?php echo $avion.value ?> ></option>
                                             <?php } ?>
                                         </select>

@@ -19,8 +19,8 @@
                                 <label>PAIS</label><br>
                                 <select class="form-control" id="pais[]">
                                     <option>Seleccione ... </option>
-                                    <?php foreach ($pais as $paises) { ?>
-                                        <option id= '<?php echo $pais . id ?>'> <?php echo $pais . value ?> ></option>
+                                    <?php foreach ($paises as $pais) { ?>
+                                        <option id= '<?php echo $pais[0]; ?>'> <?php echo $pais[1]; ?> </option>
                                     <?php } ?>
                                 </select>
                             </div>
