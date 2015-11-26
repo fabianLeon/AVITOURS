@@ -32,7 +32,7 @@
                             <div class="col-sm-4">
                                 <div class="col-lg-12 text-center">
                                     <div id="success"></div>
-                                    <button type="submit" class="btn btn-xl">Nueva Ciudad</button>
+                                    <button type="submit" class="btn btn-xl">Nuevo avion</button>
                                 </div>
                             </div>
                         </form>
