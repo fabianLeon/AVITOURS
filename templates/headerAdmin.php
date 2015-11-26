@@ -6,7 +6,7 @@
             <a class="navbar-brand page-scroll" href="index.php">
                  <img style="max-width:215px; margin-top: -15px; margin-left: -7%;" src="img/Logo-COLOR-AM.png">
             </a>
-            <a class="navbar-brand page-scroll" href="index.php">
+            <a class="navbar-brand page-scroll" href="homeAdmin.php">
                 Administraci&oacute;n
             </a>
 
@@ -63,6 +63,7 @@
                                 <?php echo($_SESSION['db_user']); ?>
                             </a>
                             <ul class = "dropdown-menu" role = "menu">
+                                <li><a href = "homeAdmin.php"><strong>Inicio</strong></a></li>
                                 <li><a href = "index.php"><strong>Cerrar Sesi&oacute;n</strong></a></li>
                             </ul>
                         <?php } ?>
