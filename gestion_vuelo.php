@@ -15,7 +15,7 @@
                     <div class="panel-heading"><h2>Gesti&oacute;n de Vuelos</h2></div>
                     <div class="panel panel-warning" >
                         <div class="panel-body">
-                            <form class="form-signin" name="vuelos" id="vuelos" method = "POST" action = home.php>    
+                            <form class="form-signin" name="vuelos" id="vuelos" method = "POST" action = controller/insertar_vuelo_controller.php>    
 
 
                                 <div class="col-sm-6">
@@ -31,14 +31,14 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
-                                        <input type="date" class="form-control" id="fecha_regreso" name="fecha_regreso" required=""/>
+                                        <input type="date" class="form-control" id="fecha_llegada" name="fecha_llegada" required=""/>
                                         <br>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Hora de Salida</label><br>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="time" class="form-control"   id="hora_salida" name="hora_inicio" required="">
+                                        <input type="time" class="form-control"   id="hora_salida" name="hora_salida" required="">
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
-                                        <input type="time" class="form-control"   id="hora_llegada" name="hora_fin" required="">
+                                        <input type="time" class="form-control"   id="hora_llegada" name="hora_llegada" required="">
 
                                     </div>
 
@@ -58,7 +58,7 @@
                                         <label>Ciudad Origen</label><br>
                                     </div>
                                     <div class="col-sm-6">
-                                        <select class="form-control" id="ciudad_origen[]">
+                                        <select class="form-control" name="ciudad_origen">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($ciudades as $ciudad) { ?>
                                                 <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
@@ -72,7 +72,7 @@
                                         <label>Ciudad Destino</label><br>
                                     </div>
                                     <div class="col-sm-6">
-                                        <select class="form-control" id="ciudad_destino[]">
+                                        <select class="form-control" name="ciudad_destino">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($ciudades as $ciudad) { ?>
                                                 <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
@@ -86,7 +86,7 @@
                                     </div>
                                     
                                     <div class="col-sm-6">
-                                        <select class="form-control" id="aviones[]">
+                                        <select class="form-control" name="avion">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($aviones as $avion) { ?>
                                                 <option id= '<?php echo $avion[0]?>'> <?php echo $avion[1]?> </option>
@@ -97,7 +97,7 @@
                                     
                                     <div class="col-lg-12 text-center">
                                         <div id="success"></div>
-                                        <button type="submit" class="btn btn-xl">Nuevo Avion</button>
+                                        <button type="submit" class="btn btn-xl">Nuevo Vuelo</button>
                                     </div>  
 
                                 </div>

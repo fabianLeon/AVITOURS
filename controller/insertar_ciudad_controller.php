@@ -12,6 +12,7 @@ if ($_POST) {
     $pais = $_POST['paises'];
     $ciudad = $_POST['ciudad'];
     $daoGestion->insertCiudad($pais, $ciudad);
-   // header('Location: ../gestion_ciudad.php');
+    header('Location: ../gestion_ciudad.php');
+    
 }
 

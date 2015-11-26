@@ -74,7 +74,7 @@ class daoGestion {
     }
     
     function insertVuelo($tipo, $fecha){
-        $tabla = "avitour.avion";
+        $tabla = "avitour.vuelo";
         $campos = array("k_avion","k_tipo_avion","d_fecha_ingreso");
         $valores = array($this->getNextValue("k_avion", $tabla),$tipo,$fecha);
         $this->database->insertarRegistro($tabla, $campos, $valores);
