@@ -8,4 +8,6 @@ include 'daos/daoAvion.php';
 
 $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
 $dao->conectar();
-$daoAvion = new daoAvion($dao);
+$daoGestion = new daoGestion($dao);
+
+$aviones = $daoGestion->getAviones();
