@@ -26,7 +26,19 @@ class daoGestion {
             $result = $this->database->ejecutarConsulta($sql);
             return $this->database->transformarResultado($result);
     }
+    
+    function getCiudadesPaise(){
+        $sql = "SELECT p.n_nombre, c.n_nombre FROM avitour.ciudad c, avitour.pais p WHERE c.k_pais = p.k_pais ORDER BY p.n_nombre,c.n_nombre";
+        $result = $this->database->ejecutarConsulta($sql);
+        return $this->database->transformarResultado($result);
+    }
 
+    function getAviones(){
+        $sql = "SELECT a.k_avion, ta.n_nombre||' - '||a.k_avion FROM avitour.avion a, avitour.tipo_avion ta WHERE a.k_tipo_avion = ta.k_tipo_avion";
+        $result = $this->database->ejecutarConsulta($sql);
+        return $this->database->transformarResultado($result);
+    }
+    
     function getTipoAvion(){
             $sql = "SELECT k_tipo_avion, n_nombre FROM avitour.tipo_avion ORDER BY n_nombre";
             $result = $this->database->ejecutarConsulta($sql);
