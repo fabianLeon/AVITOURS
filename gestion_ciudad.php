@@ -14,13 +14,13 @@
                 <div class="panel-heading"><h2>Gesti&oacute;n de Ciudades</h2></div>
                 <div class="panel panel-warning" >
                     <div class="panel-body">
-                        <form class="form-signin" name="vuelos" id="vuelos" method = "POST" action = home.php>    
+                        <form class="form-signin" name="vuelos" id="vuelos" method = "POST" action = controller/insertar_ciudad_controller.php>    
                             <div class="col-sm-4">
                                 <label>PAIS</label><br>
-                                <select class="form-control" id="pais[]">
+                                <select class="form-control" name="paises">
                                     <option>Seleccione ... </option>
                                     <?php foreach ($paises as $pais) { ?>
-                                        <option id= '<?php echo $pais[0]; ?>'> <?php echo $pais[1]; ?> </option>
+                                        <option name= '<?php echo $pais[0]; ?>'> <?php echo $pais[1]; ?> </option>
                                     <?php } ?>
                                 </select>
                             </div>

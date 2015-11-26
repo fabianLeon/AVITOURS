@@ -8,7 +8,10 @@ $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
 $dao->conectar();
 $daoGestion = new daoGestion($dao);
 
-if ($_POST){
-    //to do ...
+if ($_POST) {
+    $pais = $_POST['paises'];
+    $ciudad = $_POST['ciudad'];
+    $daoGestion->insertCiudad($pais, $ciudad);
+   // header('Location: ../gestion_ciudad.php');
 }
 

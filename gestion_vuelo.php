@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
-                                        <label>Fecha de Regreso</label><br>
+                                        <label>Fecha de Llegada</label><br>
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
@@ -42,11 +42,11 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
-                                        <label>Hora de Regreso</label><br>
+                                        <label>Hora de Llegada</label><br>
                                     </div>
                                     <div class="col-sm-6">
                                         <br>
-                                        <input type="time" class="form-control"   id="hora_fin" name="hora_fin" required="">
+                                        <input type="time" class="form-control"   id="hora_llegada" name="hora_fin" required="">
 
                                     </div>
 
@@ -89,7 +89,7 @@
                                         <select class="form-control" id="aviones[]">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($aviones as $avion) { ?>
-                                                <option id= '<?php echo $avion.id?>'> <?php echo $avion.value ?> ></option>
+                                                <option id= '<?php echo $avion[0]?>'> <?php echo $avion[1]?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>

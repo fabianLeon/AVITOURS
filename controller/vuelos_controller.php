@@ -9,5 +9,5 @@ $dao->conectar();
 $daoGestion = new daoGestion($dao);
 
 $ciudades = $daoGestion->getCiudades();
-
+$aviones = $daoGestion->getAviones();
 

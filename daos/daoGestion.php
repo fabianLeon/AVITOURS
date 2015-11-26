@@ -45,10 +45,17 @@ class daoGestion {
             return $this->database->transformarResultado($result);
     }
     
+    function getIdPais($pais){
+            $sql = "SELECT k_pais, n_nombre FROM avitour.pais where n_nombre like '".$pais."'";
+            $result = $this->database->ejecutarConsulta($sql);
+            return $this->database->transformarResultado($result);
+    }
+    
     function insertCiudad($pais, $ciudad){
         $tabla = "avitour.ciudad";
+        $id_pais = $this->getIdPais($pais);
         $campos = array("k_ciudad","k_pais","n_nombre");
-        $valores = array($this->getNextValue("k_ciudad", "avitour.ciudad"),$pais,$ciudad);
+        $valores = array($this->getNextValue("k_ciudad", "avitour.ciudad"),$id_pais[0][0],"'".$ciudad."'");
         $this->database->insertarRegistro($tabla, $campos, $valores);
     }
     
