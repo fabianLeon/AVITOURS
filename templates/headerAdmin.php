@@ -20,8 +20,8 @@
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
                             <li><a href = 'gestion_vuelo.php'>Vuelos</a></li>
-                            <li><a href = ''>Aviones</a></li>
-                            <li><a href = ''>Tarifas</a></li>
+                            <li><a href = 'gestion_aviones.php'>Aviones</a></li>
+                            <li><a href = 'gestion_tarifas.php'>Tarifas</a></li>
                             <li><a href = 'gestion_ciudad.php'>Ciudades</a></li>
                         </ul>
                     </li>

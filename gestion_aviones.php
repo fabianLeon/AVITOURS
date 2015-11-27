@@ -5,7 +5,7 @@
         <?php
         include ('./templates/importCss.php');
         include('templates/headerAdmin.php');
-        include ('controller/ciudad_controller.php');
+        include ('controller/avion_controller.php');
         include('templates/tabla.php');
         ?>
     </head>
@@ -18,7 +18,7 @@
                         <form class="form-signin" name="nuevoAvion" id="vuelos" method = "POST" action = controller/insertar_avion_controller.php>    
                             <div class="col-sm-4">
                                 <label>TIPO AVION</label><br>
-                                <select class="form-control" name="paises">
+                                <select class="form-control" name="tipo_avion">
                                     <option>Seleccione ... </option>
                                     <?php foreach ($aviones as $avion) { ?>
                                         <option name= '<?php echo $avion[0]; ?>'> <?php echo $avion[1]; ?> </option>
@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label>FECHA DE INGRESO</label><br>
-                                <input type="date" class="form-control" id="fecha_salida" name="fecha_ingreso" required=""/>
+                                <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso" required=""/>
                             </div>
                             <div class="col-sm-4">
                                 <div class="col-lg-12 text-center">

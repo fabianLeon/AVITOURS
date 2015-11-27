@@ -10,8 +10,10 @@ $dao->conectar();
 $daoGestion = new daoGestion($dao);
 
 if ($_POST) {
-    $tipoAvion = $_POST['nuevoAvion'];
+    $tipoAvion = $_POST['tipo_avion'];
     $fecha = $_POST['fecha_ingreso'];
-    $daoGestion->insertAvion($pais, $ciudad);
+    echo var_dump($fecha);
+    echo var_dump($tipoAvion);
+    $daoGestion->insertAvion($tipoAvion,$fecha);
    // header('Location: ../gestion_ciudad.php');
 }

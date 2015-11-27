@@ -45,6 +45,12 @@ class daoGestion {
             return $this->database->transformarResultado($result);
     }
     
+    function getIdTipoAvion($tipo){
+            $sql = "SELECT k_tipo_avion FROM avitour.tipo_avion where n_nombre like '".$tipo."'";
+            $result = $this->database->ejecutarConsulta($sql);
+            return $this->database->transformarResultado($result);
+    }
+    
     function getIdPais($pais){
             $sql = "SELECT k_pais, n_nombre FROM avitour.pais where n_nombre like '".$pais."'";
             $result = $this->database->ejecutarConsulta($sql);
@@ -68,8 +74,9 @@ class daoGestion {
     
     function insertAvion($tipo, $fecha){
         $tabla = "avitour.avion";
+        $idTipo = $this->getIdTipoAvion($tipo);
         $campos = array("k_avion","k_tipo_avion","d_fecha_ingreso");
-        $valores = array($this->getNextValue("k_avion", $tabla),$tipo,$fecha);
+        $valores = array($this->getNextValue("k_avion", $tabla),$idTipo[0][0],"'".$fecha."'");
         $this->database->insertarRegistro($tabla, $campos, $valores);
     }
     
