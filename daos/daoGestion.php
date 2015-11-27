@@ -86,6 +86,13 @@ class daoGestion {
         $valores = array($this->getNextValue("k_avion", $tabla),$tipo,$fecha);
         $this->database->insertarRegistro($tabla, $campos, $valores);
     }
+     function insertTarifa($tipo, $fecha){
+        $tabla = "avitour.tarifa";
+        $campos = array("k_avion","k_tipo_avion","d_fecha_ingreso");
+        $valores = array($this->getNextValue("k_avion", $tabla),$tipo,$fecha);
+        $this->database->insertarRegistro($tabla, $campos, $valores);
+    }
+    
     
 }
 ?>
