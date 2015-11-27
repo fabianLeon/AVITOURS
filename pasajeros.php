@@ -100,7 +100,7 @@
                             <div class="col-sm-6">
                                 <h5>Titular</h5><br>
                                 <input type="text" class="form-control" name="priNombre" required="" placeholder="Primer Nombre *"/><br>
-                                <input type="text" class="form-control" name="segNombre" required="" placeholder="inicial Segundo Nombre *"/><br>
+                                <input type="text" class="form-control" id="segNombre" name="segNombre" required="" oninput="eliminar_ultimo()" placeholder="inicial Segundo Nombre *"/><br>
                                 <input type="text" class="form-control" name="tarjeta" required="" placeholder="Primer apellido *"/><br>
                                 <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/><br>
                                 <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
@@ -137,9 +137,12 @@
 
     </body>
     <script>
+        function eliminar_ultimo(){
+            var segNombre = document.getElementById('segNombre');
+            segNombre.value = (segNombre.value).substring(-1,1);
+            
+        }
         $('.selectpicker').selectpicker();
     </script>
-    <?php
-    include './templates/importJS.php';
-    ?>
+    <?php include './templates/importJS.php'; ?>
 </html>
