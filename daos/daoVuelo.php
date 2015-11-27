@@ -21,6 +21,19 @@ Class daoVuelo{
     function daoVuelo($db) {
         $this->database = $db;
     }
+    
+    
+      function getVuelos1(){
+            $sql = "SELECT v.k_vuelo AS Id, c.n_nombre AS Origen, c2.n_nombre AS Destino, "
+                    . "v.d_fecha_salida AS Salida, v.d_fecha_llegada AS Llegada, "
+                    . "age(v.d_fecha_llegada,v.d_fecha_salida) AS Duracion  "
+                    . "FROM avitour.vuelo v, avitour.ciudad c, avitour.ciudad c2 "
+                    . "WHERE v.k_ciudad_origen = c.k_ciudad "
+                    . "AND v.k_ciudad_destino = c2.k_ciudad";
+            $res = $this->database->ejecutarConsulta($sql);
+            $arr = $this->database->transformarResultado($res);
+            return $arr;
+    }
 
     function getVuelos($filtro){
             $sql = "SELECT v.k_vuelo AS Id, c.n_nombre AS Origen, c2.n_nombre AS Destino, "
