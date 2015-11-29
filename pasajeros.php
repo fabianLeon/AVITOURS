@@ -50,7 +50,7 @@
                 <input type="hidden" name="vuelos_ida" value="<?php echo $_GET['vuelos_ida'] ?>"/>
 
                 <div class="col-sm-8 col-sm-offset-2">
-                    <div class="panel-heading"><h2>Pago</h2></div>
+                    <div class="panel-heading"><h2>Medio de Pago</h2></div>
                     <div class="panel panel-warning">
                         <div class="panel-body">  
                             <div class="col-sm-6">
@@ -59,21 +59,21 @@
                                 <div class="col-sm-6">
                                     <img src="img/master-card.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
                                     <div>
-                                        <input type="radio" name="franquicia[]" value="master-card">
+                                        <input type="radio" name="franquicia[]" value="Master Card">
                                         <label>Master Card</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="img/visa.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
                                     <div>
-                                        <input type="radio" name="franquicia[]" value="visa">
+                                        <input type="radio" name="franquicia[]" value="Visa">
                                         <label>Visa</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="img/dinners.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
                                     <div>
-                                        <input type="radio" name="franquicia[]" value="dinners">
+                                        <input type="radio" name="franquicia[]" value="Dinners Club">
                                         <label>Dinners Club</label>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                     <img src="img/american.png" alt="..." class="thumbnail" style="width: 100px; height: 70px">
                                     <div>
                                         <input type="radio" name="franquicia[]" value="american">
-                                        <label>American </label>
+                                        <label>American Express</label>
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" name="tarjeta" required="" placeholder="Tarjeta de Credito *"/>
@@ -101,7 +101,7 @@
                                 <h5>Titular</h5><br>
                                 <input type="text" class="form-control" name="priNombre" required="" placeholder="Primer Nombre *"/><br>
                                 <input type="text" class="form-control" id="segNombre" name="segNombre" required="" oninput="eliminar_ultimo()" placeholder="inicial Segundo Nombre *"/><br>
-                                <input type="text" class="form-control" name="tarjeta" required="" placeholder="Primer apellido *"/><br>
+                                <input type="text" class="form-control" name="priapellido" required="" placeholder="Primer apellido *"/><br>
                                 <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/><br>
                                 <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
 
