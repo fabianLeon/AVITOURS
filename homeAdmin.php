@@ -20,21 +20,11 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="img/carousell/a_DellaHuff_PRESS-a.jpg" alt="Chania" width="100%" height="1024px">
-                </div>
+                <div class="item active"><img class="carrusell" src="img/carousell/header-bg.jpg" alt="Chania" ></div>
 
-                <div class="item">
-                    <img src="img/carousell/5-Mejores-Destinos-Turisticos-Del-Mundo-1.jpg" alt="100%" width="100%" height="1024px">
-                </div>
-
-                <div class="item">
-                    <img src="img/carousell/Cataratas-Iguazu.JPG" alt="Flower" width="100%" height="1024px" >
-                </div>
-
-                <div class="item">
-                    <img src="img/carousell/Cristo-Corcovado.jpg" alt="Flower" width="100%" height="1024px">
-                </div>
+                <div class="item"><img class="carrusell" src="img/carousell/5-Mejores-Destinos-Turisticos-Del-Mundo-1.jpg"></div>
+                <div class="item"><img class="carrusell" src="img/carousell/Cataratas-Iguazu.JPG" alt="Flower"></div>
+                <div class="item"><img class="carrusell" src="img/carousell/Cristo-Corcovado.jpg" alt="Flower" ></div>
             </div>
 
             <!-- Left and right controls -->
