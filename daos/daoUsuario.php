@@ -30,11 +30,9 @@ class daoUsuario {
 		return $this->database->insertarRegistro($tabla, $campos, $valores);
 	}
 	
-	function getGroupRole($user){
-            $sql = "select rolname from pg_user join pg_auth_members on (pg_user.usesysid=pg_auth_members.member) 
-						join pg_roles on (pg_roles.oid=pg_auth_members.roleid) 
-						where pg_user.usename='$user';";
+	function getGroupRole(){
+            $sql = "select avitour.f_rol_asociado()";
             $res = $this->database->ejecutarConsulta($sql);
-            return $res;
+            return $this->database->transformarResultado($res);
     }
 }

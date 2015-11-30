@@ -1,0 +1,2 @@
+<pdf creator="Avitours" subject="Reporte" title="Reporte de reserva"><stylesheet file="./xml2pdf/stylesheets/styleAvitourReportePdf.txt"/><body format="A4" unit="mm" margins="10"><header><image file="./img/Logo-COLOR-AM-index.png" top="10" left="0"/></header>
+<footer><date align="left" format="Y-m-d"/><numerotation align="right"/></footer></body></pdf>

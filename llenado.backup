@@ -1,0 +1,508 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.2.3
+-- Dumped by pg_dump version 9.2.3
+-- Started on 2015-11-26 16:34:08
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = avitour, pg_catalog;
+
+--
+-- TOC entry 2037 (class 0 OID 35175)
+-- Dependencies: 169
+-- Data for Name: aerolinea; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY aerolinea (k_aerolinea, n_nombre) FROM stdin;
+1	Aerogustosos
+\.
+
+
+--
+-- TOC entry 2083 (class 0 OID 0)
+-- Dependencies: 182
+-- Name: auto_incremento; Type: SEQUENCE SET; Schema: avitour; Owner: u_avitour
+--
+
+SELECT pg_catalog.setval('auto_incremento', 1, false);
+
+
+--
+-- TOC entry 2038 (class 0 OID 35178)
+-- Dependencies: 170
+-- Data for Name: avion; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY avion (k_avion, k_tipo_avion, d_fecha_ingreso) FROM stdin;
+1	1	2001-09-02 00:00:00
+2	1	2001-09-02 00:00:00
+3	1	2011-08-17 00:00:00
+4	2	2015-11-01 00:00:00
+\.
+
+
+--
+-- TOC entry 2039 (class 0 OID 35181)
+-- Dependencies: 171
+-- Data for Name: ciudad; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY ciudad (k_ciudad, n_nombre, k_pais) FROM stdin;
+1	Bogota	1
+2	Medellin	1
+3	Barranquilla	1
+4	Cali	1
+5	Manizales	1
+6	Leticia	1
+7	San Andres	1
+8	Caracas	2
+9	Washington	3
+10	Chicago	3
+11	Orlando	3
+12	Baltimore	3
+13	Paris	4
+14	Marsella	4
+15	San petersburgo	5
+16	Moscu	5
+17	Berlin	6
+\.
+
+
+--
+-- TOC entry 2040 (class 0 OID 35184)
+-- Dependencies: 172
+-- Data for Name: detalle_pasajero; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY detalle_pasajero (k_reserva, k_identificacion) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2041 (class 0 OID 35187)
+-- Dependencies: 173
+-- Data for Name: detalle_silla; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY detalle_silla (k_reserva, k_silla, k_tipo_avion) FROM stdin;
+2	B07	1
+3	A04	1
+5	B04	1
+4	A04	1
+6	A11	1
+\.
+
+
+--
+-- TOC entry 2051 (class 0 OID 43010)
+-- Dependencies: 183
+-- Data for Name: pago; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY pago (k_pago, k_reserva, d_fecha, v_confirmacion) FROM stdin;
+52015-10-05 07:40:16.961-05	5	2015-10-05 07:40:16.961	true
+22015-10-05 07:44:09.327-05	2	2015-10-05 07:44:09.327	true
+32015-10-05 07:44:30.518-05	3	2015-10-05 07:44:30.518	true
+42015-10-05 08:19:37.633-05	4	2015-10-05 08:19:37.633	true
+\.
+
+
+--
+-- TOC entry 2042 (class 0 OID 35190)
+-- Dependencies: 174
+-- Data for Name: pais; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY pais (k_pais, n_nombre) FROM stdin;
+1	Colombia
+2	Venezuela
+3	EE.UU.
+4	Francia
+5	Rusia
+6	Alemania
+\.
+
+
+--
+-- TOC entry 2043 (class 0 OID 35193)
+-- Dependencies: 175
+-- Data for Name: pasajero; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY pasajero (k_identificacion, i_tipo_documento, n_primer_nombre, n_segundo_nombre, n_apellido) FROM stdin;
+103057784	CC	Fabio	Andres	Parra Fuentes
+39261727	CC	Jorge		Pachon Salgar
+19829881	CC	Maria	Isabel	Tinjaca
+6262617	CC	Miguel	Antonio	Delgado
+676161	CC	Jorge		Pachon Gutierrez
+99819828	CC	Juliana		Restrepo
+\.
+
+
+--
+-- TOC entry 2044 (class 0 OID 35196)
+-- Dependencies: 176
+-- Data for Name: reserva; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY reserva (k_reserva, k_vuelo, k_tarifa, d_fecha, n_telefono, n_email, n_tarjeta_credito, k_usuario) FROM stdin;
+4	1	1	2015-10-05 06:35:33.612	209090	fabio@nuevo.com	7765543	julian
+2	1	1	2015-10-05 06:19:57.341	209090	fafa@fafa.com	7765543	julian
+5	1	1	2015-10-05 07:10:20.476	1231234	fabian@fabian.com	1234567890	fabian
+6	1	1	2015-10-05 08:18:39.711	209090	fafa@fafa.com	1234567890	julian
+3	1	1	2015-10-05 06:35:09.555	209090	fabio@nuevo.co.es	7765543	julian
+\.
+
+
+--
+-- TOC entry 2045 (class 0 OID 35200)
+-- Dependencies: 177
+-- Data for Name: silla; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY silla (k_silla, k_tipo_avion, k_clase, n_pos_x, n_pos_y) FROM stdin;
+A01	1	Ejecutiva	0	0
+B01	1	Ejecutiva	0	1
+C01	1	Ejecutiva	0	2
+D01	1	Ejecutiva	0	3
+A02	1	Ejecutiva	1	0
+B02	1	Ejecutiva	1	1
+C02	1	Ejecutiva	1	2
+D02	1	Ejecutiva	1	3
+A03	1	Ejecutiva	2	0
+B03	1	Ejecutiva	2	1
+C03	1	Ejecutiva	2	2
+D03	1	Ejecutiva	2	3
+A04	1	Economica	3	0
+B04	1	Economica	3	1
+C04	1	Economica	3	2
+D04	1	Economica	3	3
+A05	1	Economica	4	0
+B05	1	Economica	4	1
+C05	1	Economica	4	2
+D05	1	Economica	4	3
+A06	1	Economica	5	0
+B06	1	Economica	5	1
+C06	1	Economica	5	2
+D06	1	Economica	5	3
+A07	1	Economica	6	0
+B07	1	Economica	6	1
+C07	1	Economica	6	2
+D07	1	Economica	6	3
+A08	1	Economica	7	0
+B08	1	Economica	7	1
+C08	1	Economica	7	2
+D08	1	Economica	7	3
+A09	1	Economica	8	0
+B09	1	Economica	8	1
+C09	1	Economica	8	2
+D09	1	Economica	8	3
+A10	1	Economica	9	0
+B10	1	Economica	9	1
+C10	1	Economica	9	2
+D10	1	Economica	9	3
+A11	1	Economica	10	0
+B11	1	Economica	10	1
+C11	1	Economica	10	2
+D11	1	Economica	10	3
+A12	1	Economica	11	0
+B12	1	Economica	11	1
+C12	1	Economica	11	2
+D12	1	Economica	11	3
+A13	1	Economica	12	0
+B13	1	Economica	12	1
+C13	1	Economica	12	2
+D13	1	Economica	12	3
+A14	1	Economica	13	0
+B14	1	Economica	13	1
+C14	1	Economica	13	2
+D14	1	Economica	13	3
+A15	1	Economica	14	0
+B15	1	Economica	14	1
+C15	1	Economica	14	2
+D15	1	Economica	14	3
+A16	1	Economica	15	0
+B16	1	Economica	15	1
+C16	1	Economica	15	2
+D16	1	Economica	15	3
+A17	1	Economica	16	0
+B17	1	Economica	16	1
+C17	1	Economica	16	2
+D17	1	Economica	16	3
+A18	1	Economica	17	0
+B18	1	Economica	17	1
+C18	1	Economica	17	2
+D18	1	Economica	17	3
+A19	1	Economica	18	0
+B19	1	Economica	18	1
+C19	1	Economica	18	2
+D19	1	Economica	18	3
+A20	1	Economica	19	0
+B20	1	Economica	19	1
+C20	1	Economica	19	2
+D20	1	Economica	19	3
+A21	1	Economica	20	0
+B21	1	Economica	20	1
+C21	1	Economica	20	2
+D21	1	Economica	20	3
+A22	1	Economica	21	0
+B22	1	Economica	21	1
+C22	1	Economica	21	2
+D22	1	Economica	21	3
+A23	1	Economica	22	0
+B23	1	Economica	22	1
+C23	1	Economica	22	2
+D23	1	Economica	22	3
+A24	1	Economica	23	0
+B24	1	Economica	23	1
+C24	1	Economica	23	2
+D24	1	Economica	23	3
+A01	2	Economica	0	0
+A02	2	Economica	1	0
+A03	2	Economica	2	0
+A04	2	Economica	3	0
+A05	2	Economica	4	0
+A06	2	Economica	5	0
+A07	2	Economica	6	0
+A08	2	Economica	7	0
+A09	2	Economica	8	0
+A10	2	Economica	9	0
+A11	2	Economica	10	0
+A12	2	Economica	11	0
+A13	2	Economica	12	0
+A14	2	Economica	13	0
+A15	2	Economica	14	0
+A16	2	Economica	15	0
+A17	2	Economica	16	0
+A18	2	Economica	17	0
+A19	2	Economica	18	0
+A20	2	Economica	19	0
+A21	2	Economica	20	0
+A22	2	Economica	21	0
+A23	2	Economica	22	0
+A24	2	Economica	23	0
+A25	2	Economica	24	0
+B01	2	Economica	0	1
+B02	2	Economica	1	1
+B03	2	Economica	2	1
+B04	2	Economica	3	1
+B05	2	Economica	4	1
+B06	2	Economica	5	1
+B07	2	Economica	6	1
+B08	2	Economica	7	1
+B09	2	Economica	8	1
+B10	2	Economica	9	1
+B11	2	Economica	10	1
+B12	2	Economica	11	1
+B13	2	Economica	12	1
+B14	2	Economica	13	1
+B15	2	Economica	14	1
+B16	2	Economica	15	1
+B17	2	Economica	16	1
+B18	2	Economica	17	1
+B19	2	Economica	18	1
+B20	2	Economica	19	1
+B21	2	Economica	20	1
+B22	2	Economica	21	1
+B23	2	Economica	22	1
+B24	2	Economica	23	1
+B25	2	Economica	24	1
+C01	2	Economica	0	2
+C02	2	Economica	1	2
+C03	2	Economica	2	2
+C04	2	Economica	3	2
+C05	2	Economica	4	2
+C06	2	Economica	5	2
+C07	2	Economica	6	2
+C08	2	Economica	7	2
+C09	2	Economica	8	2
+C10	2	Economica	9	2
+C11	2	Economica	10	2
+C12	2	Economica	11	2
+C13	2	Economica	12	2
+C14	2	Economica	13	2
+C15	2	Economica	14	2
+C16	2	Economica	15	2
+C17	2	Economica	16	2
+C18	2	Economica	17	2
+C19	2	Economica	18	2
+C20	2	Economica	19	2
+C21	2	Economica	20	2
+C22	2	Economica	21	2
+C23	2	Economica	22	2
+C24	2	Economica	23	2
+C25	2	Economica	24	2
+D01	2	Economica	0	3
+D02	2	Economica	1	3
+D03	2	Economica	2	3
+D04	2	Economica	3	3
+D05	2	Economica	4	3
+D06	2	Economica	5	3
+D07	2	Economica	6	3
+D08	2	Economica	7	3
+D09	2	Economica	8	3
+D10	2	Economica	9	3
+D11	2	Economica	10	3
+D12	2	Economica	11	3
+D13	2	Economica	12	3
+D14	2	Economica	13	3
+D15	2	Economica	14	3
+D16	2	Economica	15	3
+D17	2	Economica	16	3
+D18	2	Economica	17	3
+D19	2	Economica	18	3
+D20	2	Economica	19	3
+D21	2	Economica	20	3
+D22	2	Economica	21	3
+D23	2	Economica	22	3
+D24	2	Economica	23	3
+D25	2	Economica	24	3
+E01	2	Economica	0	4
+E02	2	Economica	1	4
+E03	2	Economica	2	4
+E04	2	Economica	3	4
+E05	2	Economica	4	4
+E06	2	Economica	5	4
+E07	2	Economica	6	4
+E08	2	Economica	7	4
+E09	2	Economica	8	4
+E10	2	Economica	9	4
+E11	2	Economica	10	4
+E12	2	Economica	11	4
+E13	2	Economica	12	4
+E14	2	Economica	13	4
+E15	2	Economica	14	4
+E16	2	Economica	15	4
+E17	2	Economica	16	4
+E18	2	Economica	17	4
+E19	2	Economica	18	4
+E20	2	Economica	19	4
+E21	2	Economica	20	4
+E22	2	Economica	21	4
+E23	2	Economica	22	4
+E24	2	Economica	23	4
+E25	2	Economica	24	4
+F01	2	Economica	0	5
+F02	2	Economica	1	5
+F03	2	Economica	2	5
+F04	2	Economica	3	5
+F05	2	Economica	4	5
+F06	2	Economica	5	5
+F07	2	Economica	6	5
+F08	2	Economica	7	5
+F09	2	Economica	8	5
+F10	2	Economica	9	5
+F11	2	Economica	10	5
+F12	2	Economica	11	5
+F13	2	Economica	12	5
+F14	2	Economica	13	5
+F15	2	Economica	14	5
+F16	2	Economica	15	5
+F17	2	Economica	16	5
+F18	2	Economica	17	5
+F19	2	Economica	18	5
+F20	2	Economica	19	5
+F21	2	Economica	20	5
+F22	2	Economica	21	5
+F23	2	Economica	22	5
+F24	2	Economica	23	5
+F25	2	Economica	24	5
+\.
+
+
+--
+-- TOC entry 2046 (class 0 OID 35203)
+-- Dependencies: 178
+-- Data for Name: tarifa; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY tarifa (k_tarifa, k_vuelo, k_clase, k_tipo_tarifa, v_valor) FROM stdin;
+1	1	Economica	Flexi	128000.000
+2	1	Economica	Promo	82400.000
+3	1	Economica	Sin Restriccion	168900.000
+4	1	Ejecutiva	Flexi	230790.000
+5	1	Ejecutiva	Promo	130089.000
+6	1	Ejecutiva	Sin Restriccion	310976.000
+7	2	Economica	Flexi	128000.000
+8	2	Economica	Promo	82400.000
+9	2	Economica	Sin Restriccion	168900.000
+10	2	Ejecutiva	Flexi	230790.000
+11	2	Ejecutiva	Promo	130089.000
+13	3	Economica	Flexi	128000.000
+14	3	Economica	Promo	82400.000
+15	3	Ejecutiva	Flexi	230790.000
+16	3	Ejecutiva	Sin Restriccion	310976.000
+17	11	Economica	Flexi	127999.000
+18	11	Economica	Promo	12000.000
+\.
+
+
+--
+-- TOC entry 2047 (class 0 OID 35206)
+-- Dependencies: 179
+-- Data for Name: tipo_avion; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY tipo_avion (k_tipo_avion, n_nombre, o_descripcion) FROM stdin;
+1	Boeing 747-2015	Boeing 747 modificado a doble potencia y altura inferior al modelo 2014
+2	Airbus 500-2016	Avionsote grandotote
+\.
+
+
+--
+-- TOC entry 2048 (class 0 OID 35212)
+-- Dependencies: 180
+-- Data for Name: tipo_tarifa; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY tipo_tarifa (k_tipo_tarifa, n_descripcion) FROM stdin;
+Promo	El costo mas economico del mercado al alcance del usuario
+Flexi	Tarifa que permite la flexibilidad que el usuario merece
+Sin Restriccion	Sin restricciones
+\.
+
+
+--
+-- TOC entry 2052 (class 0 OID 43021)
+-- Dependencies: 184
+-- Data for Name: usuario; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY usuario (k_usuario, n_nombre_1, n_nombre_2, n_apellido_1, n_apellido_2, v_telefono) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2049 (class 0 OID 35218)
+-- Dependencies: 181
+-- Data for Name: vuelo; Type: TABLE DATA; Schema: avitour; Owner: u_avitour
+--
+
+COPY vuelo (k_vuelo, k_aerolinea, k_ciudad_origen, k_ciudad_destino, d_fecha_salida, d_fecha_llegada, k_avion) FROM stdin;
+1	1	1	2	2015-11-02 09:02:00	2015-11-02 10:13:00	1
+2	1	1	2	2015-11-02 11:20:00	2015-11-02 12:24:00	2
+3	1	1	2	2015-11-02 14:52:00	2015-11-02 15:59:00	3
+4	1	1	2	2015-11-02 17:46:00	2015-11-02 18:52:00	1
+5	1	1	2	2015-11-02 18:55:00	2015-11-02 20:03:00	3
+6	1	1	2	2015-11-02 21:14:00	2015-11-02 22:39:00	2
+7	1	2	3	2015-11-02 12:01:02	2015-11-02 13:04:07	2
+8	1	2	3	2015-11-03 09:01:02	2015-11-03 10:43:07	1
+9	1	2	3	2015-11-03 14:02:22	2015-11-03 15:54:07	2
+10	1	2	3	2015-11-04 23:23:03	2015-11-05 00:56:37	3
+11	1	1	2	2015-11-28 11:11:11	2015-11-28 13:01:34	4
+\.
+
+
+-- Completed on 2015-11-26 16:34:09
+
+--
+-- PostgreSQL database dump complete
+--
+
