@@ -89,9 +89,9 @@
                                 <br><label>fecha de vencimiento</label>
                                 <div>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" name="mes" required="" placeholder="Mes *"/>
+                                        <input type="number" class="form-control" name="mes" min="1" max="12" required="" placeholder="Mes *"/>
                                     </div><div class="col-sm-6">
-                                        <input type="number" class="form-control" name="ano" required="" placeholder="A&ntilde;o *"/>
+                                        <input type="number" class="form-control" name="ano" required="" min="2015" max="2016" placeholder="A&ntilde;o *"/>
                                     </div>
                                 </div>
 

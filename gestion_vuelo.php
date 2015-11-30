@@ -107,18 +107,19 @@
 
                     </div>
                 </div>
-
             </div>
-
         </div>
+        <br>
         <?php
         $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion",];
         $tabla = new Tabla($titulos, $tablaVuelosGuardados);
         $tabla->escribirRegistros2();
         echo ($tabla->getTabla());
         ?>
-        <?php
-        include './templates/importJS.php';
-        ?>
-    </body>
+    </div>
+
+    <?php
+    include './templates/importJS.php';
+    ?>
+</body>
 </html>
