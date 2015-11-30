@@ -1,8 +1,9 @@
 <?php
 
 $vuelo = split("_", $_GET['vuelos_ida']);
-$avion = $daoAvion->getSillasReserva($vuelo[0]);
-
+$avion1 = $daoAvion->getSillasReserva($vuelo[0]);
+$avion2 = $daoAvion->getSillasReserva($vuelo[0]);
+$avion3 = $daoAvion->getSillasReserva($vuelo[0]);
 function getAviones($avion){
     $fila = count($avion);
     $column = count($avion[0]);
