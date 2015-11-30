@@ -1,62 +1,61 @@
 <!DOCTYPE html> 
 <html> 
-<head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var myOptions = {
-          center: new google.maps.LatLng(38.367502, -16.391602),
-          zoom: 2, 
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-          
-        };
-            
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            myOptions);     
-      
-        gozilla3 = new google.maps.Marker({
-	    position: new google.maps.LatLng(15.0203, 102.09),
-	    icon: 'http://www.google.com/mapfiles/marker.png',
-	    map: map,	   
-	   title: 'avion'		
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map_canvas { height: 100% }
+        </style>
+        <script type="text/javascript"
+                src="http://maps.googleapis.com/maps/api/js?sensor=false">
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+                var myOptions = {
+                    center: new google.maps.LatLng(38.367502, -16.391602),
+                    zoom: 2,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+
+                };
+
+                var map = new google.maps.Map(document.getElementById("map_canvas"),
+                        myOptions);
+
+                gozilla3 = new google.maps.Marker({
+                    position: new google.maps.LatLng(15.0203, 102.09),
+                    icon: 'http://www.google.com/mapfiles/marker.png',
+                    map: map,
+                    title: 'avion'
 
 
-	});
-         gozilla = new google.maps.Marker({
-      position: new google.maps.LatLng(3.455371, -76.536664),
-      icon: 'http://www.google.com/mapfiles/marker.png',
-      map: map,    
-     title: 'avion1'   
+                });
+                gozilla = new google.maps.Marker({
+                    position: new google.maps.LatLng(3.455371, -76.536664),
+                    icon: 'http://www.google.com/mapfiles/marker.png',
+                    map: map,
+                    title: 'avion1'
 
-     
-  });
-		
-        var ruta = [
-        new google.maps.LatLng(3.455371, -76.536664),
-        
-        new google.maps.LatLng(15.0203, 102.09)
-    ];
- 
-    var lineas = new google.maps.Polyline({
-        path: ruta,
-         map: map,
-         strokeColor: '#fed136',
-         strokeWeight: 7,
-         strokeOpacity: 0.8,
-         clickable: false
-    });
-      }
-    </script>
-  </head>
-  <body onload="initialize()">
-    <div id="map_canvas" style="width:80%; height:80%"></div>
-  </body>
+
+                });
+
+                var ruta = [
+                    new google.maps.LatLng(3.455371, -76.536664),
+                    new google.maps.LatLng(15.0203, 102.09)
+                ];
+
+                var lineas = new google.maps.Polyline({
+                    path: ruta,
+                    map: map,
+                    strokeColor: '#000000',
+                    strokeWeight: 5,
+                    strokeOpacity: 0.8,
+                    clickable: false
+                });
+            }
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div id="map_canvas" style="width:80%; height:80%"></div>
+    </body>
 </html> 
