@@ -82,16 +82,9 @@
                             }]
                     },
                     tooltip: {
-                        valueSuffix: '$'
+                        valueSuffix: ' Pesos($)'
                     },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-                        footerFormat: '</table>',
-                        shared: true,
-                        useHTML: true
-                    },
+//                    
                     plotOptions: {
                         column: {
                             pointPadding: 0.1,
@@ -101,6 +94,122 @@
                     series: [{
                             name: 'Recaudo',
                             data: <?PHP echo toArray($recaudo) ?>
+                        }]
+                });
+            });
+
+            $(function () {
+                $('#container3').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: <?PHP echo $titulo3[0] ?>
+                    },
+                    subtitle: {
+                        text: <?PHP echo $titulo3[1] ?>
+                    },
+                    xAxis: {
+                        categories: <?PHP echo toArrayString($top5) ?>,
+                        title: {
+                            text: null
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Population (millions)',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: ' Viales'
+                    },
+                    plotOptions: {
+                        bar: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: -40,
+                        y: 80,
+                        floating: true,
+                        borderWidth: 1,
+                        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                        shadow: true
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    series: [{
+                            name: 'No. de Viajes',
+                            data: <?PHP echo toArray($comprasTop5) ?>
+                        }]
+                });
+            });
+
+            $(function () {
+                $('#container4').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: <?PHP echo $titulo4[0] ?>
+                    },
+                    subtitle: {
+                        text: <?PHP echo $titulo4[1] ?>
+                    },
+                    xAxis: {
+                        categories: <?PHP echo toArrayString($top5destinos) ?>,
+                        title: {
+                            text: null
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Population (millions)',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: ' Viales'
+                    },
+                    plotOptions: {
+                        bar: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: -40,
+                        y: 80,
+                        floating: true,
+                        borderWidth: 1,
+                        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                        shadow: true
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    series: [{
+                            name: 'No. de Viajes',
+                            data: <?PHP echo toArray($destinosTop5) ?>
                         }]
                 });
             });
@@ -114,9 +223,31 @@
         <script src="js/highcharts.js"></script>
         <script src="js/modules/exporting.js"></script>
         <div class="container">
-            <div id="container1"></div>
-            <br>
-            <div id="container2"></div>
+            <div class="panel-heading"><h2>Tabla 1</h2></div>
+            <div class="panel panel-warning" >
+                <div class="panel-body">
+                    <div id="container1"></div>
+                </div>
+            </div>
+            <div class="panel-heading"><h2>Tabla 2</h2></div>
+            <div class="panel panel-warning" >
+                <div class="panel-body">
+                    <div id="container2"></div>
+                </div>
+            </div>
+            <div class="panel-heading"><h2>Top 5 - viajeros Frecuentes</h2></div>
+            <div class="panel panel-warning" >
+                <div class="panel-body">
+                    <div id="container3"></div>
+                </div>
+            </div>
+            
+            <div class="panel-heading"><h2>Top 5 Destinos Frecuentes</h2></div>
+            <div class="panel panel-warning" >
+                <div class="panel-body">
+                    <div id="container4"></div>
+                </div>
+            </div>
         </div>
 
     </body>
