@@ -22,7 +22,17 @@ Class daoReserva {
             $res = $this->database->ejecutarConsulta($sql);
             return $res;
     }
-    
+     function getReservasAdmin(){
+            $sql = "SELECT r.k_reserva AS Id, c1.n_nombre AS Origen, c2.n_nombre AS Destino, t.k_clase||' '||t.k_tipo_tarifa AS Tarifa, r.d_fecha AS Fecha, r.n_telefono AS Telefono, case when p.v_confirmacion is not null then 'Pagado' else case when age(r.d_fecha)> interval '2' day then 'Vencido' else 'Vigente' end  end AS Estado 
+                    FROM avitour.reserva r left outer join avitour.pago p on r.k_reserva = p.k_reserva, avitour.vuelo v, avitour.ciudad c1, avitour.ciudad c2, avitour.tarifa t 
+                    WHERE 
+                    v.k_vuelo = r.k_vuelo 
+                    AND c1.k_ciudad = v.k_ciudad_origen 
+                    AND c2.k_ciudad = v.k_ciudad_destino 
+                    AND r.k_tarifa = t.k_tarifa";
+            $res = $this->database->ejecutarConsulta($sql);
+            return $res;
+    }
     function getNextReserva(){
         $sql="SELECT MAX(k_reserva) FROM avitour.reserva";
         $res = $this->database->ejecutarConsulta($sql);

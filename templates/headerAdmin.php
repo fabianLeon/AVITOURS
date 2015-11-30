@@ -31,7 +31,7 @@
                             RESERVAS<span class = "caret"></span>
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
-                            <li><a href = 'reservas.php'>Ver Reservas</a></li>
+                            <li><a href = 'reservas_admin.php'>Ver Reservas</a></li>
                         </ul>
                     </li>
                     

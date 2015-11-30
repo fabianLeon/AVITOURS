@@ -12,6 +12,7 @@
         <div class="container">
             <div class="wrapper">
                 <div class="col-sm-8 col-sm-offset-2">
+
                     <div class="panel-heading"><h2>Gesti&oacute;n de Vuelos</h2></div>
                     <div class="panel panel-warning" >
                         <div class="panel-body">
@@ -61,7 +62,7 @@
                                         <select class="form-control" name="ciudad_origen">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($ciudades as $ciudad) { ?>
-                                                <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
+                                                <option id= '<?php echo $ciudad[0] ?>'> <?php echo $ciudad[1] ?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>
@@ -75,42 +76,49 @@
                                         <select class="form-control" name="ciudad_destino">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($ciudades as $ciudad) { ?>
-                                                <option id= '<?php echo $ciudad[0]?>'> <?php echo $ciudad[1]?> </option>
+                                                <option id= '<?php echo $ciudad[0] ?>'> <?php echo $ciudad[1] ?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>
                                     </div>
-                                    
+
                                     <div class="col-sm-6">
                                         <label>Avion</label><br>
                                     </div>
-                                    
+
                                     <div class="col-sm-6">
                                         <select class="form-control" name="avion">
                                             <option>Seleccione ... </option>
                                             <?php foreach ($aviones as $avion) { ?>
-                                                <option id= '<?php echo $avion[0]?>'> <?php echo $avion[1]?> </option>
+                                                <option id= '<?php echo $avion[0] ?>'> <?php echo $avion[1] ?> </option>
                                             <?php } ?>
                                         </select>
                                         <br>
                                     </div>
-                                    
+
                                     <div class="col-lg-12 text-center">
                                         <div id="success"></div>
                                         <button type="submit" class="btn btn-xl">Nuevo Vuelo</button>
                                     </div>  
 
                                 </div>
-
+                            </form>
                         </div>
-                        </form>
+
                     </div>
                 </div>
+
             </div>
+
         </div>
-    </div> 
-    <?php
-    include './templates/importJS.php';
-    ?>
-</body>
+        <?php
+        $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion",];
+        $tabla = new Tabla($titulos, $tablaVuelosGuardados);
+        $tabla->escribirRegistros2();
+        echo ($tabla->getTabla());
+        ?>
+        <?php
+        include './templates/importJS.php';
+        ?>
+    </body>
 </html>

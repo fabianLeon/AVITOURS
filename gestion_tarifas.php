@@ -82,33 +82,29 @@
                                         <br>
                                         <button type="submit" class="btn btn-xl">Guardar</button>
                                     </div>  
-
+                                </form>
                             </div>
-
                         </div>
-                        </form>
                     </div>
                 <?php } ?>
             </div>
 
         </div>
-    </div> 
 
 
 
-    <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-8 col-sm-offset-2">
+            <?php
+            $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion",];
+            $tabla = new Tabla($titulos, $tablaVuelosGuardados);
+            $tabla->escribirRegistros("gestion_tarifas.php");
+            echo ($tabla->getTabla());
+            ?>
+
+        </div>
+
         <?php
-        $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion",];
-        $tabla = new Tabla($titulos, $tablaVuelosGuardados);
-        $tabla->escribirRegistros("gestion_tarifas.php");
-        echo ($tabla->getTabla());
+        include './templates/importJS.php';
         ?>
-
-    </div>
-
-
-</form>    <?php
-include './templates/importJS.php';
-?>
-</body>
+    </body>
 </html>
