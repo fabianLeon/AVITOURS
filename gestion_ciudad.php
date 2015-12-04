@@ -23,10 +23,15 @@
                                         <option name= '<?php echo $pais[0]; ?>'> <?php echo $pais[1]; ?> </option>
                                     <?php } ?>
                                 </select>
+                                <br>
+                                <input type="text" class="form-control" name="cx" required="" placeholder="coordenada x*"/>
                             </div>
                             <div class="col-sm-4">
                                 <label>CIUDAD</label><br>
                                 <input type="text" class="form-control" name="ciudad" required="" placeholder="Ingrese Ciudad *"/>
+                                <br>
+                                <input type="text" class="form-control" name="cy" required="" placeholder="coordenada y*"/>
+                                
                             </div>
                             <div class="col-sm-4">
                                 <div class="col-lg-12 text-center">

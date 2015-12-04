@@ -13,6 +13,5 @@ $dao->conectar();
 $ciudades = $daoGestion->getCiudades();
 $aviones = $daoGestion->getAviones();
 
-$tablaVuelosGuardados = $daoVuelo->getVuelos1();
-$tablaReservas = $dao->transformarResultado($res);
+$tablaVuelosGuardados = $daoVuelo->getVuelos_coordenadas();
 

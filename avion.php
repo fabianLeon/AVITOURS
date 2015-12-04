@@ -9,7 +9,7 @@
         <?php include('templates/header.php'); ?>
         <div class="container">
             <div class="canvas">
-                <canvas id="canvas" width="600" height="600">
+                <canvas class="canvas2" id="canvas" width="600" height="600">
                     Tu navegador no soporta canvas.
                 </canvas>
                 <div class="col-lg-4 text-center">
@@ -21,10 +21,11 @@
         </div>
     </body>
     <?php
-        include './controller/avion_controller.php'
+        include './controller/avion_controller.php';
     ?>
     <script> 
-        var avion = <?php include './model/avion_model.php'; ?>
+        
+        var avion = <?php include './model/avion_model.php'?>
         var numero = <?php echo $numero?>;
     </script>
     <script src="js/avion.js"></script>

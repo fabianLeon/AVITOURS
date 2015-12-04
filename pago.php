@@ -21,7 +21,7 @@
         <div class="container">
             <?php
             require_once "lib/nusoap.php";
-            $cliente = new nusoap_client("http://192.168.43.53:81/cardServiceSoap/producto.php");
+            $cliente = new nusoap_client("http://192.168.137.80:81/cardServiceSoap/producto.php");
             $error = $cliente->getError();
             if ($error) {
                 echo "<h2>Constructor error</h2><pre>" . $error . "</pre>";
@@ -43,6 +43,39 @@
                 }
                 if(split(" ", $resultado)[3]!="Disponible"){
                    $daoReserva->insertPago($_GET['id']);
+                   $myfile = fopen("templates/headerReserva.html", "r") or die("Unable to open file!");
+                    $mensaje_reporte = fread($myfile,filesize("templates/headerReserva.html"));
+                    fclose($myfile);
+
+                    $mensaje_reporte .= $daoReserva->getReporte($_GET['id']);
+
+                    require_once "Mail.php";
+
+                    $from = '<faparraf@correo.udistrital.edu.co>';
+                    $to = '<fabio-parra@hotmail.com>';
+                    $subject = 'Reporte de reserva';
+
+                    $headers = array(
+                        'From' => $from,
+                        'To' => $to,
+                        'Subject' => $subject
+                    );
+
+                    $smtp = Mail::factory('smtp', array(
+                            'host' => 'ssl://smtp.gmail.com',
+                            'port' => '465',
+                            'auth' => true,
+                            'username' => 'faparraf@correo.udistrital.edu.co',
+                            'password' => '29960381408'
+                        ));
+
+                    $mail = $smtp->send($to, $headers, $mensaje_reporte);
+
+                    if (PEAR::isError($mail)) {
+                        echo('<p>' . $mail->getMessage() . '</p>');
+                    } else {
+                        echo('<p>Message successfully sent!</p>');
+                    }
                    header('Location: reservas.php');
                 }
             }

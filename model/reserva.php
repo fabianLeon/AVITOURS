@@ -78,7 +78,6 @@ class Reserva {
 
     function toArray(){
         return array($this->k_reserva,
-            $this->k_vuelo,
             "'$this->k_tarifa'", 
             "$this->d_fecha",
             "'$this->n_telefono'",

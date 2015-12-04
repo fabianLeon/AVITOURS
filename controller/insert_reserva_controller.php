@@ -13,7 +13,7 @@ $daoReserva = new daoReserva($dao);
 if ($_POST) {
     //validacion de medio de pago
     require_once "../lib/nusoap.php";
-    $cliente = new nusoap_client("http://localhost:81/cardServiceSoap/producto.php");
+    $cliente = new nusoap_client("http://192.168.137.80:81/cardServiceSoap/producto.php");
     $error = $cliente->getError();
     if ($error) {
         echo "<h2>Constructor error</h2><pre>" . $error . "</pre>";
@@ -43,7 +43,7 @@ if ($_POST) {
         $daoReserva->insertReserva($reserva);
 
         for ($i = 0; $i < $no - 1; $i++) {
-            $daoReserva->insertSillaReserva($reserva->k_reserva, $sillas[$i]);
+            $daoReserva->insertSillaReserva($reserva->k_reserva, $sillas[$i], $reserva->k_vuelo);
         }
         header('Location: ../reservas.php?result = Validacion Exitosa');
     } else {

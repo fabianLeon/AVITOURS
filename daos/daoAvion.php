@@ -29,8 +29,8 @@ class daoAvion {
 		$sql = "SELECT querySilla.*, 
 				CASE WHEN querySilla.k_silla IN 
 				(SELECT s.k_silla 
-				FROM avitour.reserva r, avitour.vuelo v, avitour.detalle_silla s 
-				WHERE r.k_vuelo = v.k_vuelo
+				FROM avitour.reserva r, avitour.vuelo v, avitour.detalle_silla s, avitour.reserva_vuelo rv 
+				WHERE r.k_reserva = rv.k_reserva AND rv.k_vuelo = v.k_vuelo
 					AND r.k_reserva= s.k_reserva
 					AND v.k_vuelo = $idVuelo) THEN '1'
 				ELSE '0'

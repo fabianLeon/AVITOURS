@@ -10,6 +10,3 @@ $dao->conectar();
 $daoVuelo = new daoVuelo($dao);
 $tablaVuelosGuardados = $daoVuelo->getVuelos1();
 
-    
-
-

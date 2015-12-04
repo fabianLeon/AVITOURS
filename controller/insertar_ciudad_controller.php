@@ -11,7 +11,9 @@ $daoGestion = new daoGestion($dao);
 if ($_POST) {
     $pais = $_POST['paises'];
     $ciudad = $_POST['ciudad'];
-    $daoGestion->insertCiudad($pais, $ciudad);
+    $x = $_POST['cx'];
+    $y = $_POST['cy'];
+    $daoGestion->insertCiudad($pais, $ciudad,$x,$y);
     header('Location: ../gestion_ciudad.php');
     
 }

@@ -17,33 +17,38 @@
                 src="http://maps.googleapis.com/maps/api/js?sensor=false">
         </script>
         <script type="text/javascript">
+            function initialize(ox, oy, dx, dy) {
+                $("#map_canvas").on("shown.bs.modal", function (e) {
+                    google.maps.event.trigger(map, "resize");
+                    return map.setCenter(markerLatLng);
 
-            function initialize() {
+                });
                 var myOptions = {
-                    center: new google.maps.LatLng(40.036026, -4.965820),
-                    zoom: 1,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    center: new google.maps.LatLng(((ox+dx)/2),((oy+dy)/2)),
+                    zoom: 5,
+                    //mapTypeId: google.maps.MapTypeId.SATELLITE,
+                    zoomControl: false,
+                    scaleControl: false
 
                 };
-
                 var map = new google.maps.Map(document.getElementById("map_canvas"),
                         myOptions);
 
                 gozilla3 = new google.maps.Marker({
-                    position: new google.maps.LatLng(15.0203, 102.09),
+                    position: new google.maps.LatLng(ox, oy),
                     icon: 'http://www.google.com/mapfiles/marker.png',
                     map: map,
                     title: 'avion'
                 });
                 gozilla = new google.maps.Marker({
-                    position: new google.maps.LatLng(3.455371, -76.536664),
+                    position: new google.maps.LatLng(dx, dy),
                     icon: 'http://www.google.com/mapfiles/marker.png',
                     map: map,
-                    title: 'avion1'
+                    title: 'avion'
                 });
                 var ruta = [
-                    new google.maps.LatLng(3.455371, -76.536664),
-                    new google.maps.LatLng(15.0203, 102.09)
+                    new google.maps.LatLng(ox, oy),
+                    new google.maps.LatLng(dx, dy)
                 ];
 
                 var lineas = new google.maps.Polyline({
@@ -55,6 +60,7 @@
                     clickable: false
                 });
             }
+
         </script>
     </head>
     <body>  
@@ -160,38 +166,29 @@
         </div>
         <br>
         <div class="container">
-            <button type="button" class="btn btn-primary" onclick="initialize()" data-toggle="modal" data-target="#modal-1">Activate the button</button>
-
-            <div class="modal fade" id="modal-1">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" >&times;</button>
-                            <h3 class="modal-title">This is the heading</h3>
-                        </div>
-                        <div class="modal-body">
-                            <div id="map_canvas" style="width:100%; height:60%"></div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <a href="" class="btn btn-default" data-dismiss="modal">Close</a>
-                        </div>
+            <div class="col-sm-6">
+                <div class="panel-heading"><h2>Listado</h2></div>
+                <?php
+                $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion", ];
+                $tabla = new Tabla($titulos, $tablaVuelosGuardados);
+                $tabla->escribirRegistros3();
+                echo ($tabla->getTabla());
+                ?>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel-heading"><h2>Mapa</h2></div>
+                <div class="panel panel-warning" >
+                    <div class="panel-body">
+                        <div id="map_canvas" style="width:100%; height:60%"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
 
-        <?php
-        $titulos = ["ID", "Origen", "Destino", "Fecha Salida", "Fecha LLegada", "Duracion",];
-        $tabla = new Tabla($titulos, $tablaVuelosGuardados);
-        $tabla->escribirRegistros2();
-        echo ($tabla->getTabla());
-        ?>
-
-        <script src="js/jquery.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Plugin JavaScript -->
-
-    </body>
+</body>
 </html>

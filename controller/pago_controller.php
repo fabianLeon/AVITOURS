@@ -12,7 +12,7 @@ $daoReserva = new daoReserva($dao);
 
 if ($_POST){
     require_once "lib/nusoap.php";
-    $cliente = new nusoap_client("http://localhost:81/cardServiceSoap/producto.php");
+    $cliente = new nusoap_client("http://192.168.137.80:81/cardServiceSoap/producto.php");
       
     $error = $cliente->getError();
     if ($error) {

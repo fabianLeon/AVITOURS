@@ -12,14 +12,15 @@ if ($_POST) {
     $f_llegada = $_POST['fecha_llegada'];
     $h_salida = $_POST['hora_salida'];
     $h_llegada = $_POST['hora_llegada'];
-    $c_origen = $_POST['ciudad_origen'];
-    $c_destino = $_POST['ciudad_destino'];
-    $avion = $_POST['avion'];
+    $c_origen = $daoGestion->getIdCiuadad($_POST['ciudad_origen'])[0][0];
+    $c_destino = $daoGestion->getIdCiuadad($_POST['ciudad_destino'])[0][0];
+    $avion = split(" - ", $_POST['avion'])[1];
     echo "<br>".$h_salida." ".$h_llegada."<br>";
     echo $f_salida." ".$f_llegada."<br>";
     echo $c_origen." ".$c_destino."<br>";
     echo $avion."<br>";
-    //$daoGestion->insertCiudad($pais, $ciudad);
-   // header('Location: ../gestion_ciudad.php');
+    
+    $daoGestion->insertVuelo2($f_salida .' '. $h_salida, $f_llegada.' '. $h_llegada,$c_origen,$c_destino,$avion);
+    header('Location: ../gestion_vuelo.php');
 }
 

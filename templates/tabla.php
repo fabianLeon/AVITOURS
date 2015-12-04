@@ -41,12 +41,38 @@ Class Tabla {
                             <span class='glyphicon glyphicon-remove-circle' aria-hidden='true'>
                             </span>
                          </a>";
-                
             }
             $this->t .= "<a href='$linkX?id=$registro[0]' class='btn btn-warning' role='button' >
                             <span class='glyphicon glyphicon-search' aria-hidden='true'>
                             </span>
                          </a>";
+            $this->t .= "</th>";
+        }
+
+        $this->t .= "</tr>";
+        $this->t .= "</tbody></table></div>";
+    }
+
+    function EscribirRegistros3() {
+        $this->t .= " <div class='panel panel-warning'>
+                       <table class='table table-bordered'>
+                       <thead>";
+        foreach ($this->titulos as $valor) {
+            $this->t .= "<th>$valor</th>";
+        }
+        $this->t .= "<th>Opcion</th>";
+        $this->t .= "</tr></thead><tbody>";
+        foreach ($this->tabla as $registro) {
+            $this->t .= "<tr>";
+            
+            for($i= 0; $i <count($registro) -1;$i  ++) {
+                $this->t .= "<th style='text-align:center'>$registro[$i]</th>";
+            } $this->t .= "<th>";
+            $this->t .= "<a onclick ='initialize$registro[6]' class='btn btn-Default ' role='button' >
+                            <span class='glyphicon glyphicon-remove-circle' aria-hidden='true'>
+                            </span>
+                         </a>";
+
             $this->t .= "</th>";
         }
 
@@ -73,7 +99,7 @@ Class Tabla {
         $this->t .= "</tr>";
         $this->t .= "</tbody></table></div>";
     }
-    
+
     function getTabla() {
         return $this->t;
     }
